@@ -1,14 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=5 format=3 uid="uid://k33cyi1veudy"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pppyj"]
+[ext_resource type="Texture2D" uid="uid://bkf6d2j2rbj0v" path="res://assets/dummy plant.png" id="1_fi0kw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odjdt"]
+size = Vector2(16, 16.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a88lo"]
+atlas = ExtResource("1_fi0kw")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pppyj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a88lo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Plant" type="AnimatableBody2D"]
-position = Vector2(0, -15)
+position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_pppyj")
+shape = SubResource("RectangleShape2D_odjdt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pppyj")
