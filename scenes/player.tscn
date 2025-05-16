@@ -293,3 +293,5 @@ animation = &"right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_4flbx")
+
+[node name="PickupArea" type="Area2D" parent="."]
