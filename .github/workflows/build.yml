@@ -3,7 +3,7 @@ name: Build Godot Game
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   export:
