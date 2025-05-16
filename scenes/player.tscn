@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c1rxyxpuowjbi"]
+[gd_scene load_steps=42 format=3 uid="uid://c1rxyxpuowjbi"]
 
 [ext_resource type="Texture2D" uid="uid://b56uxetu0amj0" path="res://resources/dummy-character.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scenes/player.gd" id="1_g2els"]
@@ -282,6 +282,10 @@ animations = [{
 radius = 11.0
 height = 38.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 15.0
+height = 54.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
@@ -295,3 +299,8 @@ position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_4flbx")
 
 [node name="PickupArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(0, -22)
+shape = SubResource("CapsuleShape2D_g2els")

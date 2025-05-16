@@ -36,6 +36,7 @@ func _physics_process(_delta: float) -> void:
 
 	# Check for pickup or drop
 	if Input.is_action_just_pressed("interact"):  # define this in Input Map
+		print("pressed interact")
 		if carried_flower:
 			drop_flower()
 		else:
@@ -44,7 +45,9 @@ func _physics_process(_delta: float) -> void:
 
 func pickup_flower():
 	for body in pickup_area.get_overlapping_bodies():
-		if body.is_in_group("flowers"):
+		print(body.name)
+		if body.is_in_group("plants"):
+			print("overlapping with plant")
 			carried_flower = body
 			carried_flower.get_parent().remove_child(carried_flower)
 			add_child(carried_flower)
