@@ -8,7 +8,8 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Plants" type="Node" parent="."]
+[node name="Plants" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Some Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
 position = Vector2(406, 418)
@@ -17,7 +18,7 @@ position = Vector2(406, 418)
 position = Vector2(382, 335)
 
 [node name="Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(464, 374)
+position = Vector2(465, 394)
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(384, 353)

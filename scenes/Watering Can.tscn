@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1pkf4sqi5ste"]
+[gd_scene load_steps=5 format=3 uid="uid://bturak1o64hn2"]
 
 [ext_resource type="Texture2D" uid="uid://bg3mno7cjcis1" path="res://assets/watering-can-demo.png" id="1_dxiiu"]
-[ext_resource type="Script" uid="uid://tw81mii6ww1r" path="res://scripts/watering_can.gd" id="1_k0dpr"]
+[ext_resource type="Script" path="res://scenes/watering_can.gd" id="1_k0dpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0dpr"]
 size = Vector2(13, 12.5)
