@@ -22,7 +22,6 @@ animations = [{
 }]
 
 [node name="Plant" type="StaticBody2D"]
-z_index = 10
 collision_layer = 3
 script = ExtResource("1_odjdt")
 
