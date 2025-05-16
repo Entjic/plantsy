@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=7 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/Plot.tscn" id="5_p57ef"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -21,6 +22,9 @@ position = Vector2(382, 335)
 [node name="Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
 position = Vector2(465, 394)
 
+[node name="Plant2" parent="Plants" instance=ExtResource("1_uwrxv")]
+position = Vector2(540, 329)
+
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(384, 353)
 script = ExtResource("3_iywne")
@@ -29,8 +33,11 @@ script = ExtResource("3_iywne")
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="Map" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(370, 291)
-
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(272, 389)
+
+[node name="Plot" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(570, 307)
+
+[node name="Map" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(370, 291)
