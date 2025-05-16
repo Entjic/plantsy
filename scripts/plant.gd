@@ -1,10 +1,11 @@
-extends Node2D
+extends Holdable
 
 var hidration: float = 10.0  # Starts empty
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("plants")
+	item_type = "flower"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
