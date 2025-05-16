@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b56uxetu0amj0"
-path="res://.godot/imported/dummy-character.png-cd5b537838f6f93de4b721e194f0583e.ctex"
+uid="uid://cgj2j6hfyab4k"
+path="res://.godot/imported/moench.png-65def2b0bf2c48b16023c1cd6a0e57a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/dummy-character.png"
-dest_files=["res://.godot/imported/dummy-character.png-cd5b537838f6f93de4b721e194f0583e.ctex"]
+source_file="res://assets/moench.png"
+dest_files=["res://.godot/imported/moench.png-65def2b0bf2c48b16023c1cd6a0e57a0.ctex"]
 
 [params]
 
