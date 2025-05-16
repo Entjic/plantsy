@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=6 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bturak1o64hn2" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -22,6 +23,7 @@ position = Vector2(465, 394)
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(384, 353)
+script = ExtResource("3_iywne")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
