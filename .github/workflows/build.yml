@@ -17,7 +17,7 @@ jobs:
     - name: Set up Godot
       uses: chickensoft-games/setup-godot@v1
       with:
-        version: 4.2.1  # Correct key
+        version: 4.4.1  # Correct key
         include-templates: true  # Correct key
 
     - name: Export to Web (HTML5)
