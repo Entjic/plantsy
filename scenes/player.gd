@@ -44,6 +44,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func pickup_flower():
+	print("PickupArea Layer: ", pickup_area.collision_layer)
+	print("PickupArea Mask: ", pickup_area.collision_mask)
+
 	for body in pickup_area.get_overlapping_bodies():
 		print(body.name)
 		if body.is_in_group("plants"):

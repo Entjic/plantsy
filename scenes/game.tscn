@@ -11,6 +11,9 @@ position = Vector2(408, 418)
 [node name="Some other Plant" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(668, 342)
 
+[node name="Plant" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(453, 354)
+
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(384, 353)
 
