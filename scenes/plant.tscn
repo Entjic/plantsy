@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://k33cyi1veudy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pppyj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pppyj"]
+
+[node name="Plant" type="AnimatableBody2D"]
+position = Vector2(0, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_pppyj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pppyj")
