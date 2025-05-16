@@ -7,6 +7,17 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Some Plant" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(406, 418)
+
+[node name="Some other Plant" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(382, 335)
+
+[node name="Plant" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(464, 374)
+
+[node name="Plants" type="Node" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(384, 353)
 
@@ -16,14 +27,3 @@ position_smoothing_enabled = true
 
 [node name="Map" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(370, 291)
-
-[node name="Plants" type="Node" parent="."]
-
-[node name="Some Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(408, 418)
-
-[node name="Some other Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(668, 342)
-
-[node name="Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(453, 354)
