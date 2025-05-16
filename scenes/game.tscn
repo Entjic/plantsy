@@ -31,4 +31,4 @@ position_smoothing_enabled = true
 position = Vector2(370, 291)
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(295, 388)
+position = Vector2(272, 389)
