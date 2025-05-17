@@ -50,6 +50,5 @@ position = Vector2(185, -48)
 
 [node name="Map" parent="." instance=ExtResource("3_lnu2h")]
 
-[node name="WateringCanHoldable" parent="." instance=ExtResource("10_vtaks")]
-position = Vector2(85, 184)
-script = null
+[node name="SlotWateringCan" parent="." instance=ExtResource("10_vtaks")]
+position = Vector2(69, 116)
