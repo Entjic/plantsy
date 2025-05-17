@@ -1,13 +1,18 @@
 extends Holdable
 
 @onready var water_area: Area2D = $Area2D  # Assuming you'll add an Area2D as a child
+var watering:= false
 
 func _ready():
 	item_type = "watering_can"
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_released("use_item"):
+		watering = false
+		$AnimatedSprite2D.play("water_stop")
+
 func use(_node: Node, facing_direction: Vector2) -> void:
 	var player := _node as Node2D  # Make sure we can access global_position
-
 	for body in water_area.get_overlapping_bodies():
 		# Only water bodies that have a water_level property
 		if "water_level" in body.get_property_list().map(func(p): return p.name):
@@ -16,10 +21,14 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 			var facing: Vector2 = facing_direction.normalized()
 			var alignment := facing.dot(to_body)
 
+			print(direction +" " +str(facing_direction.x))
+
 			# Require player to be roughly facing the body
 			if alignment >= 0.7:
 				var anim_player := $AnimatedSprite2D
-				anim_player.play("water")
+				if(!watering):
+					anim_player.play("water_start")
+					watering = true;
 				var sound_player := $SplishSplash
 				if not sound_player.playing:
 					sound_player.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1pkf4sqi5ste"]
+[gd_scene load_steps=13 format=3 uid="uid://d1pkf4sqi5ste"]
 
 [ext_resource type="Script" uid="uid://tw81mii6ww1r" path="res://scripts/watering_can.gd" id="1_k0dpr"]
 [ext_resource type="Texture2D" uid="uid://ct0u1rbwcri3u" path="res://assets/sprite1_4.png" id="2_k0dpr"]
@@ -11,17 +11,25 @@ size = Vector2(13, 12.5)
 atlas = ExtResource("2_k0dpr")
 region = Rect2(48, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8kjj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ijl4"]
 atlas = ExtResource("2_k0dpr")
 region = Rect2(48, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fktxn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo4gl"]
 atlas = ExtResource("2_k0dpr")
 region = Rect2(32, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tum53"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4f61"]
 atlas = ExtResource("2_k0dpr")
 region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkp6"]
+atlas = ExtResource("2_k0dpr")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvdwe"]
+atlas = ExtResource("2_k0dpr")
+region = Rect2(48, 96, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8kjj"]
 animations = [{
@@ -35,22 +43,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t8kjj")
+"texture": SubResource("AtlasTexture_1ijl4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fktxn")
+"texture": SubResource("AtlasTexture_lo4gl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tum53")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fktxn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t8kjj")
+"texture": SubResource("AtlasTexture_j4f61")
 }],
 "loop": false,
-"name": &"water",
+"name": &"water_start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvdwe")
+}],
+"loop": false,
+"name": &"water_stop",
 "speed": 5.0
 }]
 

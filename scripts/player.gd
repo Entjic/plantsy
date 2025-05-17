@@ -48,8 +48,12 @@ func _physics_process(_delta: float) -> void:
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
 				anim_sprite.play("right")
+				if(held):
+					held.direction = 'right'
 			else:
 				anim_sprite.play("left")
+				if(held):
+					held.direction = 'left'
 		else:
 			if direction.y > 0:
 				anim_sprite.play("down")
