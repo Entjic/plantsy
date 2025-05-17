@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://daprx2vogkd8f" path="res://scenes/ShopCactus.tscn" id="12_dinhu"]
 
-[node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iywne")
 
