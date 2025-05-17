@@ -377,7 +377,7 @@ script = SubResource("GDScript_3vyb7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_sh265")
-animation = &"up"
+animation = &"down"
 centered = false
 offset = Vector2(-32, -64)
 

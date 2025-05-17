@@ -9,7 +9,7 @@ var held: Holdable = null
 
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing
 
-
+#
 func _process(_delta):
 	if held:
 		held.position = Vector2(0, -16)
@@ -21,10 +21,14 @@ func _physics_process(_delta: float) -> void:
 
 	var direction := Vector2(x_direction, y_direction)
 
+	var speed_boost := 1
+	
+	if Input.is_action_pressed("sneak"):
+		speed_boost = 5
 
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
-		velocity = direction * SPEED
+		velocity = direction * SPEED * speed_boost
 		facing_direction = direction  # ✅ Save the last direction for later
 
 		if abs(direction.x) > abs(direction.y):
