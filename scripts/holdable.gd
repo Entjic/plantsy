@@ -8,6 +8,8 @@ var carried_mask := 0
 var carried_z_index := 0
 var parent_node : Node = null
 
+var slot: HoldableSlot = null
+
 func _init(_type: String = ""):
 	item_type = _type
 
@@ -21,7 +23,6 @@ func pick_up(player: Node):
 	parent_node = self.get_parent()
 	parent_node.remove_child(self)
 	var anchor := player.get_node("HoldableAnchor")
-	
 	anchor.add_child(self)
 	self.position = Vector2.ZERO  # It will inherit anchor's offset
 	
@@ -30,8 +31,9 @@ func pick_up(player: Node):
 	self.set_physics_process(false)
 	self.collision_layer = 0
 	self.collision_mask = 0
+	slot = null
 
-func drop(player: Node, facing_direction: Vector2):
+func drop(player: Node, facing_direction: Vector2, target: HoldableSlot):
 	print("Trying to drop node " + self.name)
 	var anchor := player.get_node("HoldableAnchor")
 	anchor.remove_child(self)
@@ -46,6 +48,10 @@ func drop(player: Node, facing_direction: Vector2):
 	self.set_physics_process(true)
 	self.collision_layer = self.carried_layer
 	self.collision_mask = self.carried_mask
+	self.slot = target
 
 func use(_node: Node, facing_direction: Vector2) -> void:
+	pass
+	
+func stop_use() -> void:
 	pass

@@ -63,9 +63,12 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("use_item") and held:
 		held.use(self, facing_direction)
 
+	if Input.is_action_just_released("use_item") and held and "stop_use" in held:
+		held.stop_use()
+
 	move_and_slide()
 
-	if Input.is_action_just_pressed("interact"): 
+	if Input.is_action_just_pressed("interact"):
 		for body in pickup_area.get_overlapping_bodies():
 			if body is Holdable and held == null:
 				pickup(body)
@@ -84,7 +87,7 @@ func drop(body: Node):
 		print("Can place " + held.name + " on slot")
 		held.drop(self, facing_direction)
 		slot.center(held)
-		slot.empty = false
+		slot.held = held
 		held = null
 		return
 	else:
@@ -94,9 +97,9 @@ func buy(shop: Node):
 	if held:
 		print("you are already holding item :(")
 		return
-	
+
 	if bank.pay(shop.price):
-		var item = shop.reciveItem()	
+		var item = shop.reciveItem()
 		get_tree().current_scene.add_child(item)
 		item.pick_up(self)
 		held = item

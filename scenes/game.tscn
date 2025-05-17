@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=14 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://c1h5c3877t3d2" path="res://scenes/SlotWateringCan.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="12_dinhu"]
+[ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
 
-[node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iywne")
 
@@ -101,3 +101,10 @@ position = Vector2(129, -80)
 itemType = "rose"
 item = ExtResource("1_uwrxv")
 price = 30.0
+
+[node name="Plant" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(37, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_dinhu")
+autoplay = true
