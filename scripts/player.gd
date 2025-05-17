@@ -7,6 +7,8 @@ const SPEED = 60.0
 
 var held: Holdable = null
 
+var bank: Bank = Bank.new()
+
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing
 
 #
@@ -22,6 +24,9 @@ func _physics_process(_delta: float) -> void:
 	var direction := Vector2(x_direction, y_direction)
 
 	var speed_boost := 1
+	
+	if Input.is_action_just_pressed("money_cheat"):
+		bank.give(100)
 	
 	if Input.is_action_pressed("sneak"):
 		speed_boost = 5
