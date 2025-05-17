@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcbrarehldn1j"]
+[gd_scene load_steps=10 format=3 uid="uid://bcbrarehldn1j"]
 
 [ext_resource type="Script" uid="uid://cvl67urdkblsw" path="res://scripts/fertilizer.gd" id="1_br11q"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="2_br11q"]
@@ -10,6 +10,18 @@ size = Vector2(13, 12.5)
 atlas = ExtResource("2_br11q")
 region = Rect2(112, 96, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_br11q"]
+atlas = ExtResource("2_br11q")
+region = Rect2(128, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixdti"]
+atlas = ExtResource("2_br11q")
+region = Rect2(144, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aiq1"]
+atlas = ExtResource("2_br11q")
+region = Rect2(144, 96, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8kjj"]
 animations = [{
 "frames": [{
@@ -19,6 +31,20 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br11q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixdti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aiq1")
+}],
+"loop": true,
+"name": &"fertilize",
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0dpr"]
