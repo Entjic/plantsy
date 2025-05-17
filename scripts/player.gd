@@ -69,48 +69,37 @@ func _physics_process(_delta: float) -> void:
 
 	# Check for pickup or drop
 	if Input.is_action_just_pressed("interact"):  # define this in Input Map
-		if held:
-			drop()
-		else:
-			pickup()
+		for body in pickup_area.get_overlapping_bodies():
+			if body is Holdable and held == null:
+				pickup(body)
+			elif body is HoldableSlot and held != null:
+				drop(body)
+			elif body is shop:
+				buy(body)
 
-	if Input.is_action_just_pressed("ui_text_newline"):  #todo key
-		buy();
+	#if Input.is_action_just_pressed("ui_text_newline"):  #todo key
+		#buy();
 
-func pickup():
-	for body in pickup_area.get_overlapping_bodies():
-		if body is Holdable and held == null:
-			held = body
-			print("picking up smth")
-			held.pick_up(self)
-			break
+func pickup(body: Node):
+	held = body
+	held.pick_up(self)
 
-func drop():
-	if not held:
+func drop(body: Node):
+	var slot: HoldableSlot = body
+	if slot.can_accept(held, facing_direction, self):
+		print("Can place " + held.name + " on slot")
+		held.drop(self, facing_direction)
+		slot.center(held)
+		slot.empty = false
+		held = null
 		return
+	else:
+		print("Wrong slot for this item.")
 	
-	for body in pickup_area.get_overlapping_bodies():
-		if body is HoldableSlot:
-			var slot: HoldableSlot = body
-			if slot.can_accept(held, facing_direction, self):
-				print("Can place " + held.name + " on slot")
-				held.drop(self, facing_direction)
-				slot.center(held)
-				slot.empty = false
-				held = null
-				return
-			else:
-				print("Wrong slot for this item.")
-	
-	print("No valid slot to drop on.")
-	
-func buy():
+func buy(body: Node):
 	if held:
 		return
 	print("try")
-	for body in pickup_area.get_overlapping_bodies():
-		print("found smth")
-		if body is shop:
-			print("buy")
+			
 			#money check
 			#held = Shop.reciveItem();
