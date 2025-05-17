@@ -85,9 +85,9 @@ func drop(body: Node):
 	var slot: HoldableSlot = body
 	if slot.can_accept(held, facing_direction, self):
 		print("Can place " + held.name + " on slot")
-        held.drop(self, facing_direction, slot)
+		held.drop(self, facing_direction, slot)
 		slot.center(held)
-        slot.held = held
+		slot.held = held
 		held = null
 		return
 	else:

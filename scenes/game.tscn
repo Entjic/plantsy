@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=14 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="5_p57ef"]
-[ext_resource type="PackedScene" uid="uid://dxrdygn5oiwj0" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
+[ext_resource type="PackedScene" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://c1h5c3877t3d2" path="res://scenes/SlotWateringCan.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
-[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="12_dinhu"]
 [ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="13_fjien"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -67,37 +67,37 @@ position = Vector2(-140, 97)
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="CactusShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+[node name="CactusShop" parent="Node2D" instance=ExtResource("13_fjien")]
 position = Vector2(-11, -79)
 itemType = "cactus"
 item = ExtResource("1_uwrxv")
 price = 10.0
 
-[node name="SunflowerShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+[node name="SunflowerShop" parent="Node2D" instance=ExtResource("13_fjien")]
 position = Vector2(17, -79)
 itemType = "sunflower"
 item = ExtResource("1_uwrxv")
 price = 20.0
 
-[node name="OrangeShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+[node name="OrangeShop" parent="Node2D" instance=ExtResource("13_fjien")]
 position = Vector2(45, -80)
 itemType = "orange"
 item = ExtResource("1_uwrxv")
 price = 15.0
 
-[node name="PurpleShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+[node name="PurpleShop" parent="Node2D" instance=ExtResource("13_fjien")]
 position = Vector2(74, -80)
 itemType = "purple"
 item = ExtResource("1_uwrxv")
 price = 20.0
 
-[node name="RedShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+[node name="RedShop" parent="Node2D" instance=ExtResource("13_fjien")]
 position = Vector2(102, -80)
 itemType = "red"
 item = ExtResource("1_uwrxv")
 price = 20.0
 
-[node name="RoseShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+[node name="RoseShop" parent="Node2D" instance=ExtResource("13_fjien")]
 position = Vector2(129, -80)
 itemType = "rose"
 item = ExtResource("1_uwrxv")
