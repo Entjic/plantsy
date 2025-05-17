@@ -6,6 +6,7 @@ const SPEED = 60.0
 @onready var pickup_area: Area2D = $PickupArea
 @onready var ui: Control = $Camera2D/CanvasLayer/Interface
 
+
 var held: Holdable = null
 
 var bank: Bank = Bank.new()
@@ -69,17 +70,23 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("analyze"):
-		for body in pickup_area.get_overlapping_bodies():
-			if body is not Holdable or body.item_type != "plant":
-				continue
-			
-			var to_body: Vector2 = (body.global_position - self.global_position).normalized()
-			var facing: Vector2 = facing_direction.normalized()
-			var alignment := facing.dot(to_body)
+		
+		var note_ui = get_tree().get_root().get_node("Game/CanvasLayer/PlantNote")
+		if note_ui.visible:
+			note_ui.hide()
+		else: 
+			for body in pickup_area.get_overlapping_bodies():
+				if body is not Holdable or body.item_type != "plant":
+					continue
+				
+				var to_body: Vector2 = (body.global_position - self.global_position).normalized()
+				var facing: Vector2 = facing_direction.normalized()
+				var alignment := facing.dot(to_body)
 
-			# Require player to be roughly facing the body
-			if alignment >= 0.7:
-				print("found match")
+				# Require player to be roughly facing the body
+				if alignment >= 0.7:
+					print("found match")
+					note_ui.show_note(body)
 			
 	if Input.is_action_just_pressed("interact"):
 		for body in pickup_area.get_overlapping_bodies():

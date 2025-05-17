@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://b37n4lv3j45vb" path="res://scenes/PlantNote.tscn" id="3_trtic"]
 [ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://w6pamfp40ick" path="res://scenes/Pesticide.tscn" id="10_dinhu"]
@@ -27,6 +27,9 @@ offset_top = -70.0
 offset_right = -1.0
 offset_bottom = 78.0
 
+[node name="PlantNote" parent="CanvasLayer" instance=ExtResource("3_trtic")]
+visible = false
+
 [node name="Plants" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-385, -355)
@@ -45,7 +48,6 @@ position = Vector2(448, 333)
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(-1, -2)
-script = ExtResource("3_iywne")
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(-109, 20)
