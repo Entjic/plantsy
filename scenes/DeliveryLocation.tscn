@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm6nhpwocylrk"]
+
+[ext_resource type="Script" uid="uid://brywcochqh3le" path="res://scripts/delivery_location.gd" id="1_dstdy"]
+[ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="2_4x25w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5vkh"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uotxi"]
+atlas = ExtResource("2_4x25w")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3r207"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uotxi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DeliveryLocation" type="StaticBody2D"]
+collision_layer = 3
+script = ExtResource("1_dstdy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_n5vkh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+sprite_frames = SubResource("SpriteFrames_3r207")
+offset = Vector2(0, -8)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=15 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="11_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="13_fjien"]
+[ext_resource type="PackedScene" uid="uid://dm6nhpwocylrk" path="res://scenes/DeliveryLocation.tscn" id="14_trtic"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -113,16 +114,19 @@ autoplay = true
 position = Vector2(37, 0)
 
 [node name="SlotTool" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(17, -80)
+position = Vector2(16, -101)
 
 [node name="SlotTool2" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(35, -80)
+position = Vector2(34, -101)
 
 [node name="SlotTool3" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(53, -80)
+position = Vector2(52, -101)
 
 [node name="SlotTool4" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(-1, -80)
+position = Vector2(-2, -101)
 
 [node name="Pesticide" parent="." instance=ExtResource("10_dinhu")]
 position = Vector2(-111, -79)
+
+[node name="DeliveryLocation" parent="." instance=ExtResource("14_trtic")]
+position = Vector2(265, -32)
