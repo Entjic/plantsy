@@ -5,7 +5,18 @@ extends Holdable
 func _ready():
 	item_type = "fertilizer"
 
-func use(node: Node) -> void:
+func use(_node: Node, facing_direction: Vector2) -> void:
+	var player := _node as Node2D  # Make sure we can access global_position
+
 	for body in fertilizer_area.get_overlapping_bodies():
+		# Only water bodies that have a water_level property
 		if "fertilizer_level" in body.get_property_list().map(func(p): return p.name):
-			body.fertilizer_level.value += 0.04
+			# Direction from player to the body
+			var to_body: Vector2 = (body.global_position - player.global_position).normalized()
+			var facing: Vector2 = facing_direction.normalized()
+			var alignment := facing.dot(to_body)
+
+			# Require player to be roughly facing the body
+			if alignment >= 0.7:
+				body.fertilizer_level.value += 0.04
+				break
