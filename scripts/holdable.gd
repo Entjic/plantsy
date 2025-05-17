@@ -42,3 +42,7 @@ func drop(player: Node, facing_direction: Vector2):
 	self.set_physics_process(true)
 	self.collision_layer = self.carried_layer
 	self.collision_mask = self.carried_mask
+
+func use(user: Node) -> void:
+	# Default implementation - override in subclasses if needed
+	print("Used item: %s by %s" % [self.name, user.name])

@@ -29,6 +29,9 @@ func _physics_process(_delta: float) -> void:
 
 	var speed_boost := 1
 	
+	if Input.is_action_pressed("use_item") and held:
+		held.use(self)
+	
 	if Input.is_action_just_pressed("money_cheat"):
 		bank.give(100)
 	
