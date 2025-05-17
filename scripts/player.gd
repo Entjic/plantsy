@@ -96,6 +96,7 @@ func drop():
 				print("Can place " + held.name + " on slot")
 				held.drop(self, facing_direction)
 				slot.center(held)
+				slot.empty = false
 				held = null
 				return
 			else:
