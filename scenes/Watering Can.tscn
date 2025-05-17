@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://l77nqbbg0lqr"]
+[gd_scene load_steps=10 format=3 uid="uid://blukn1ltbtpwa"]
 
 [ext_resource type="Script" uid="uid://tw81mii6ww1r" path="res://scripts/watering_can.gd" id="1_k0dpr"]
 [ext_resource type="Texture2D" uid="uid://ct0u1rbwcri3u" path="res://assets/sprite1_4.png" id="2_k0dpr"]
