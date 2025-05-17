@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://daprx2vogkd8f"]
+[gd_scene load_steps=6 format=3 uid="uid://daprx2vogkd8f"]
 
-[ext_resource type="Script" uid="uid://dhlgedyuvf5c5" path="res://scripts/shop_cactus.gd" id="1_dikpe"]
+[ext_resource type="Script" uid="uid://dlibe5jfqiq7v" path="res://scripts/shop_cactus.gd" id="1_dikpe"]
+[ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="2_ahmto"]
 [ext_resource type="Texture2D" uid="uid://bkf6d2j2rbj0v" path="res://assets/dummy plant.png" id="2_tgky2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahmto"]
@@ -20,6 +21,7 @@ animations = [{
 light_mask = 2
 collision_layer = 2
 script = ExtResource("1_dikpe")
+plant_scene = ExtResource("2_ahmto")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)

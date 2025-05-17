@@ -90,12 +90,13 @@ func drop(body: Node):
 	else:
 		print("Wrong slot for this item.")
 	
-func buy(body: Node):
+func buy(shop: Node):
 	if held:
+		print("you are already holding item :(")
 		return
 	
-	bank.pay(body.price)
-	print("try")
-			
-			#money check
-			#held = Shop.reciveItem();
+	if bank.pay(shop.price):
+		var item = shop.reciveItem()	
+		get_tree().current_scene.add_child(item)
+		item.pick_up(self)
+		held = item
