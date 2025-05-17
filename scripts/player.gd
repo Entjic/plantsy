@@ -88,6 +88,16 @@ func drop(body: Node):
 		held.drop(self, facing_direction, slot)
 		slot.center(held)
 		slot.held = self.held
+		
+		print(slot is DeliveryLocation)
+		print(self.held is Plant)
+		if slot is DeliveryLocation and self.held is Plant: 
+			var dl: DeliveryLocation = slot
+			var plnt: Plant = self.held
+			dl.pay(bank, plnt)
+			
+			print()
+		
 		self.held = null
 		return
 	else:
