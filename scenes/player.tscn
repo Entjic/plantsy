@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://c1rxyxpuowjbi"]
 
 [ext_resource type="Texture2D" uid="uid://cgj2j6hfyab4k" path="res://assets/moench.png" id="1_3vyb7"]
-[ext_resource type="PackedScene" path="res://scenes/Interface.tscn" id="3_dqkch"]
+[ext_resource type="PackedScene" uid="uid://p1204yu64b0t" path="res://scenes/Interface.tscn" id="3_dqkch"]
 
 [sub_resource type="GDScript" id="GDScript_3vyb7"]
 script/source = "extends CharacterBody2D
@@ -396,7 +396,7 @@ position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(7, 7)
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
