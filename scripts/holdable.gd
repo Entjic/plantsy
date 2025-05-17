@@ -46,3 +46,6 @@ func drop(player: Node, facing_direction: Vector2):
 	self.set_physics_process(true)
 	self.collision_layer = self.carried_layer
 	self.collision_mask = self.carried_mask
+
+func use(_node: Node, facing_direction: Vector2) -> void:
+	pass
