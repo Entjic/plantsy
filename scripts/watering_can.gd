@@ -19,7 +19,14 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 			# Require player to be roughly facing the body
 			if alignment >= 0.7:
 				var anim_player := $AnimatedSprite2D
-				if anim_player:
-					anim_player.play("water")
+				anim_player.play("water")
+				var sound_player := $SplishSplash
+				if not sound_player.playing:
+					sound_player.play()
 				body.water_level.value += 0.04
 				break
+
+
+func stop_use():
+	$AnimatedSprite2D.stop()
+	$SplishSplash.stop()
