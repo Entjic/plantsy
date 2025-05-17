@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=14 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Texture2D" uid="uid://bkf6d2j2rbj0v" path="res://assets/dummy plant.png" id="1_fi0kw"]
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
+[ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjdt"]
 size = Vector2(16, 16.125)
@@ -10,11 +11,77 @@ size = Vector2(16, 16.125)
 atlas = ExtResource("1_fi0kw")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_toh6u"]
+atlas = ExtResource("3_a88lo")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptog4"]
+atlas = ExtResource("3_a88lo")
+region = Rect2(80, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pppyj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a88lo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toh6u")
+}],
+"loop": true,
+"name": &"plant_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptog4")
+}],
+"loop": true,
+"name": &"plant_2",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qc6y"]
+atlas = ExtResource("3_a88lo")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljraq"]
+atlas = ExtResource("3_a88lo")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2riao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qc6y")
+}],
+"loop": true,
+"name": &"plant_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljraq")
+}],
+"loop": true,
+"name": &"plant_2",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5w0e"]
+atlas = ExtResource("3_a88lo")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_toh6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5w0e")
 }],
 "loop": true,
 "name": &"default",
@@ -30,9 +97,20 @@ script = ExtResource("1_odjdt")
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_odjdt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PlantTop" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_pppyj")
+animation = &"plant_1"
 offset = Vector2(0, -8)
+
+[node name="PlantBottom" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_2riao")
+animation = &"plant_1"
+
+[node name="PlantPot" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_toh6u")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

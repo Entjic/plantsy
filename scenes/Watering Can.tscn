@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1pkf4sqi5ste"]
+[gd_scene load_steps=10 format=3 uid="uid://l77nqbbg0lqr"]
 
 [ext_resource type="Script" uid="uid://tw81mii6ww1r" path="res://scripts/watering_can.gd" id="1_k0dpr"]
 [ext_resource type="Texture2D" uid="uid://ct0u1rbwcri3u" path="res://assets/sprite1_4.png" id="2_k0dpr"]
@@ -56,7 +56,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0dpr"]
 height = 38.0
 
-[node name="WateringCan" type="StaticBody2D"]
+[node name="Watering Can" type="StaticBody2D"]
 collision_layer = 3
 script = ExtResource("1_k0dpr")
 
@@ -66,7 +66,7 @@ shape = SubResource("RectangleShape2D_k0dpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t8kjj")
-animation = &"idle"
+animation = &"water"
 autoplay = "idle"
 offset = Vector2(0, -8)
 
