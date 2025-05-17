@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://djbdiqclymmlu"]
+[gd_scene load_steps=5 format=4 uid="uid://djbdiqclymmlu"]
 
 [ext_resource type="TileSet" uid="uid://4kuc7bcw7n22" path="res://tile_sets/Set1.tres" id="1_5hauk"]
+[ext_resource type="Texture2D" uid="uid://ciu53tcmdlqi" path="res://icon.svg" id="2_lajc7"]
 
 [sub_resource type="Gradient" id="Gradient_5hauk"]
 offsets = PackedFloat32Array(0.357143, 1)
@@ -35,26 +36,37 @@ tile_set = ExtResource("1_5hauk")
 [node name="PointLight2D" type="PointLight2D" parent="Node"]
 position = Vector2(-792, -40)
 scale = Vector2(3, 3)
-color = Color(0.810802, 0.591957, 5.77569e-07, 1)
+color = Color(1, 0.735294, 0.0441779, 1)
 texture = SubResource("GradientTexture2D_lajc7")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Node"]
 position = Vector2(23, 40)
 scale = Vector2(12.02, 10.9575)
-color = Color(0.810802, 0.591957, 5.77569e-07, 1)
 texture = SubResource("GradientTexture2D_lajc7")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Node"]
 position = Vector2(-519, 154)
 scale = Vector2(3, 3)
-color = Color(0.810802, 0.591957, 5.77569e-07, 1)
+color = Color(1, 0.735294, 0.0441779, 1)
 texture = SubResource("GradientTexture2D_lajc7")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Node"]
 position = Vector2(-823, 25)
 scale = Vector2(3, 3)
-color = Color(0.810802, 0.591957, 5.77569e-07, 1)
+color = Color(1, 0.735294, 0.0441779, 1)
 texture = SubResource("GradientTexture2D_lajc7")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Node"]
+visible = false
+position = Vector2(-447, -312)
+rotation = 0.00174533
+color = Color(0.577008, 0.577008, 0.577008, 1)
+shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Node"]
 color = Color(0.205117, 0.205117, 0.205117, 1)
+
+[node name="Node2" type="Node" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2"]
+texture = ExtResource("2_lajc7")
