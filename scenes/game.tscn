@@ -55,48 +55,56 @@ position = Vector2(185, -48)
 
 [node name="SlotPlant" parent="." instance=ExtResource("5_p57ef")]
 
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-96, -272)
+
+[node name="CactusShop" parent="Node2D" instance=ExtResource("13_fjien")]
+position = Vector2(-96, 104)
+itemType = "cactus"
+item = ExtResource("1_uwrxv")
+price = 10.0
+metadata/_edit_group_ = true
+
+[node name="SunflowerShop" parent="Node2D" instance=ExtResource("13_fjien")]
+position = Vector2(-48, 104)
+itemType = "sunflower"
+item = ExtResource("1_uwrxv")
+price = 20.0
+metadata/_edit_group_ = true
+
+[node name="OrangeShop" parent="Node2D" instance=ExtResource("13_fjien")]
+position = Vector2(0, 104)
+itemType = "orange"
+item = ExtResource("1_uwrxv")
+price = 15.0
+metadata/_edit_group_ = true
+
+[node name="PurpleShop" parent="Node2D" instance=ExtResource("13_fjien")]
+position = Vector2(48, 104)
+itemType = "purple"
+item = ExtResource("1_uwrxv")
+price = 20.0
+metadata/_edit_group_ = true
+
+[node name="RedShop" parent="Node2D" instance=ExtResource("13_fjien")]
+position = Vector2(96, 104)
+itemType = "red"
+item = ExtResource("1_uwrxv")
+price = 20.0
+metadata/_edit_group_ = true
+
+[node name="RoseShop" parent="Node2D" instance=ExtResource("13_fjien")]
+position = Vector2(144, 104)
+itemType = "rose"
+item = ExtResource("1_uwrxv")
+price = 30.0
+metadata/_edit_group_ = true
+
 [node name="Map" parent="." instance=ExtResource("3_lnu2h")]
 
 [node name="WateringCan" parent="." instance=ExtResource("11_dinhu")]
 position = Vector2(-140, 97)
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="CactusShop" parent="Node2D" instance=ExtResource("13_fjien")]
-position = Vector2(-11, -79)
-itemType = "cactus"
-item = ExtResource("1_uwrxv")
-price = 10.0
-
-[node name="SunflowerShop" parent="Node2D" instance=ExtResource("13_fjien")]
-position = Vector2(17, -79)
-itemType = "sunflower"
-item = ExtResource("1_uwrxv")
-price = 20.0
-
-[node name="OrangeShop" parent="Node2D" instance=ExtResource("13_fjien")]
-position = Vector2(45, -80)
-itemType = "orange"
-item = ExtResource("1_uwrxv")
-price = 15.0
-
-[node name="PurpleShop" parent="Node2D" instance=ExtResource("13_fjien")]
-position = Vector2(74, -80)
-itemType = "purple"
-item = ExtResource("1_uwrxv")
-price = 20.0
-
-[node name="RedShop" parent="Node2D" instance=ExtResource("13_fjien")]
-position = Vector2(102, -80)
-itemType = "red"
-item = ExtResource("1_uwrxv")
-price = 20.0
-
-[node name="RoseShop" parent="Node2D" instance=ExtResource("13_fjien")]
-position = Vector2(129, -80)
-itemType = "rose"
-item = ExtResource("1_uwrxv")
-price = 30.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_dinhu")

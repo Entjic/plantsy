@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="1_rgcs7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec5oe"]
-size = Vector2(20, 31)
+size = Vector2(20, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cimqq"]
 atlas = ExtResource("1_rgcs7")
@@ -82,15 +82,15 @@ animations = [{
 }]
 
 [node name="Shop" type="StaticBody2D"]
-position = Vector2(0, -15.5)
 collision_layer = 3
 script = ExtResource("1_ec5oe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_ec5oe")
+metadata/_edit_group_ = true
 
 [node name="shopTexture" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 15.5)
 sprite_frames = SubResource("SpriteFrames_t4md6")
 animation = &"orange"
 offset = Vector2(0, -16)
