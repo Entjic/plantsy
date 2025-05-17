@@ -13,6 +13,7 @@ var type:= "sunflower"
 @onready var InspectionInfo = $InspectionInfo;
 @onready var StateLabel = $InspectionInfo/StateLabel;
 @onready var ArrowSprite = $InspectionInfo/ArrowSprite;
+@onready var HealthBarPath = $InspectionInfo/HealthBarSprite/Path2D/PathFollow2D;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,13 +34,16 @@ func _on_timer_timeout() -> void:
 	+ " => ♥: " + str(Util.round_with_decimals(self.health.value, 2)))
 	
 	var state_transformed = self.state.value - 75.0
-	StateLabel.text = str(Util.round_with_decimals(state_transformed, 2))
+	var state_text = str(Util.round_with_decimals(state_transformed, 2))
 	
 	if state_transformed > 0:
+		StateLabel.text = "+" + state_text
 		ArrowSprite.animation = "green"
 	else:
+		StateLabel.text = state_text
 		ArrowSprite.animation = "red"
-		
+	
+	HealthBarPath.progress_ratio = 1.0 - (self.health.value / 100)
 
 func setTextures():
 	item_type = "plant"
