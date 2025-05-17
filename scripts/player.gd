@@ -4,10 +4,16 @@ const SPEED = 60.0
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var pickup_area: Area2D = $PickupArea
+@onready var ui: Control = $Camera2D/Interface
 
 var held: Holdable = null
 
+var bank: Bank = Bank.new()
+
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing
+
+func _ready() -> void:
+	ui.bank = bank
 
 #
 func _process(_delta):
@@ -22,6 +28,9 @@ func _physics_process(_delta: float) -> void:
 	var direction := Vector2(x_direction, y_direction)
 
 	var speed_boost := 1
+	
+	if Input.is_action_just_pressed("money_cheat"):
+		bank.give(100)
 	
 	if Input.is_action_pressed("sneak"):
 		speed_boost = 5
