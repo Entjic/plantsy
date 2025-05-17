@@ -65,10 +65,7 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
-	#todo hier body in area gucken und je nach type fuc aufrufen
-
-	# Check for pickup or drop
-	if Input.is_action_just_pressed("interact"):  # define this in Input Map
+	if Input.is_action_just_pressed("interact"): 
 		for body in pickup_area.get_overlapping_bodies():
 			if body is Holdable and held == null:
 				pickup(body)
@@ -76,9 +73,6 @@ func _physics_process(_delta: float) -> void:
 				drop(body)
 			elif body is shop:
 				buy(body)
-
-	#if Input.is_action_just_pressed("ui_text_newline"):  #todo key
-		#buy();
 
 func pickup(body: Node):
 	held = body
@@ -99,6 +93,8 @@ func drop(body: Node):
 func buy(body: Node):
 	if held:
 		return
+	
+	bank.pay(body.price)
 	print("try")
 			
 			#money check

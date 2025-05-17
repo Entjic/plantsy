@@ -2,6 +2,7 @@ class_name shop
 extends Node2D
 
 @export var item: String;
+@export var price: float;
 
 func reciveItem() :#-> Holdable:
 	print(item + "gekauft");
