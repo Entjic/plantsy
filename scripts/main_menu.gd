@@ -1,8 +1,6 @@
 extends Control
 
-signal start_pressed;
-
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel") && get_tree().paused == true:
 		start_game();
 	elif(Input.is_action_just_pressed("ui_cancel") && get_tree().paused == false):
