@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b37n4lv3j45vb"]
+
+[ext_resource type="Script" uid="uid://dydar1logsdha" path="res://scripts/plant_note.gd" id="1_nm86x"]
+
+[node name="PlantNote" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nm86x")
