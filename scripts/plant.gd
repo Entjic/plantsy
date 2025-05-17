@@ -32,7 +32,14 @@ func _on_timer_timeout() -> void:
 	+ " -> state: " + str(Util.round_with_decimals(self.state.value, 2))
 	+ " => ♥: " + str(Util.round_with_decimals(self.health.value, 2)))
 	
-	StateLabel = str(Util.round_with_decimals(self.state.value - 75.0, 2))
+	var state_transformed = self.state.value - 75.0
+	StateLabel.text = str(Util.round_with_decimals(state_transformed, 2))
+	
+	if state_transformed > 0:
+		ArrowSprite.animation = "green"
+	else:
+		ArrowSprite.animation = "red"
+		
 
 func setTextures():
 	if(type == 'cactus'):
