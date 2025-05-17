@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://c1rxyxpuowjbi"]
 
 [ext_resource type="Texture2D" uid="uid://cgj2j6hfyab4k" path="res://assets/moench.png" id="1_3vyb7"]
-[ext_resource type="PackedScene" uid="uid://p1204yu64b0t" path="res://scenes/Interface.tscn" id="3_dqkch"]
+[ext_resource type="PackedScene" path="res://scenes/Interface.tscn" id="3_dqkch"]
 
 [sub_resource type="GDScript" id="GDScript_3vyb7"]
 script/source = "extends CharacterBody2D
@@ -406,3 +406,6 @@ layer = 0
 z_index = 10
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="HoldableAnchor" type="Node2D" parent="."]
+position = Vector2(0, 12)
