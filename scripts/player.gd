@@ -74,7 +74,7 @@ func _physics_process(_delta: float) -> void:
 				pickup(body)
 			elif body is HoldableSlot and held != null:
 				drop(body)
-			elif body is shop:
+			elif body.get_scene_file_path() == 'res://scenes/Shop.tscn':
 				buy(body)
 
 func pickup(body: Node):
