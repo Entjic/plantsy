@@ -2,11 +2,12 @@ class_name HoldableSlot
 extends Node2D
 
 @export var accepted_holdables: Array[String] = []
-var empty: bool = true
+var held: Holdable = null
 
 func can_accept(holdable: Holdable, facing_direction: Vector2, player: Node) -> bool:
 	print("checkin if " + holdable.item_type + " is in " + str(accepted_holdables))
-	if not empty:
+	if held:
+		print(held.name)
 		return false
 	# Check if item is valid
 	if holdable.item_type not in accepted_holdables:

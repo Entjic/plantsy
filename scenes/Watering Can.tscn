@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://l77nqbbg0lqr"]
+[gd_scene load_steps=11 format=3 uid="uid://l77nqbbg0lqr"]
 
 [ext_resource type="Script" uid="uid://tw81mii6ww1r" path="res://scripts/watering_can.gd" id="1_k0dpr"]
 [ext_resource type="Texture2D" uid="uid://ct0u1rbwcri3u" path="res://assets/sprite1_4.png" id="2_k0dpr"]
+[ext_resource type="AudioStream" uid="uid://bsd41h2te4gfb" path="res://audio/532890__bricklover__watering-with-a-watering-can.mp3" id="3_t8kjj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0dpr"]
 size = Vector2(13, 12.5)
@@ -76,3 +77,6 @@ position = Vector2(0, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_k0dpr")
+
+[node name="SplishSplash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t8kjj")

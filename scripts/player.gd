@@ -41,7 +41,7 @@ func _physics_process(_delta: float) -> void:
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_boost
-		facing_direction = direction  # ✅ Save the last direction for later
+		facing_direction = direction  
 		
 		anim_sprite.speed_scale = anim_speed
 		
@@ -63,6 +63,9 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("use_item") and held:
 		held.use(self, facing_direction)
 
+	if Input.is_action_just_released("use_item") and held and "stop_use" in held:
+		held.stop_use()
+			
 	move_and_slide()
 
 	# Check for pickup or drop
@@ -77,6 +80,7 @@ func pickup():
 	for body in pickup_area.get_overlapping_bodies():
 		if body is Holdable and held == null:
 			held = body
+			
 			print("picking up smth")
 			held.pick_up(self)
 			break
@@ -90,9 +94,9 @@ func drop():
 			var slot: HoldableSlot = body
 			if slot.can_accept(held, facing_direction, self):
 				print("Can place " + held.name + " on slot")
-				held.drop(self, facing_direction)
+				held.drop(self, facing_direction, slot)
 				slot.center(held)
-				slot.empty = false
+				slot.held = held
 				held = null
 				return
 			else:
