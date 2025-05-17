@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=10 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
@@ -6,10 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bm0nwpjrfyuqf" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/Plot.tscn" id="5_p57ef"]
-[ext_resource type="PackedScene" uid="uid://p1204yu64b0t" path="res://scenes/Interface.tscn" id="6_0tnpc"]
-[ext_resource type="PackedScene" path="res://scenes/Watering Can Holdable.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://c1h5c3877t3d2" path="res://scenes/Watering Can Holdable.tscn" id="10_vtaks"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -42,14 +41,6 @@ position = Vector2(448, 333)
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(-1, -2)
 script = ExtResource("3_iywne")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
-[node name="Interface" parent="Player/Camera2D" instance=ExtResource("6_0tnpc")]
-z_index = 10
-metadata/_edit_use_anchors_ = true
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(-109, 20)

@@ -4,7 +4,7 @@ const SPEED = 60.0
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var pickup_area: Area2D = $PickupArea
-@onready var ui: Control = $Camera2D/Interface
+@onready var ui: Control = $Camera2D/CanvasLayer/Interface
 
 var held: Holdable = null
 
