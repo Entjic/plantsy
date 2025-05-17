@@ -4,6 +4,7 @@ extends Node
 var min: float = 0.0
 var max: float = 100.0
 var value: float = 10.0
+var optimum: float = 50
 
 func progress(current: float) -> float:
 	return current
