@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1h5c3877t3d2"]
 
-[ext_resource type="Script" path="res://scenes/watering_can_holdable.gd" id="1_kkknh"]
+[ext_resource type="Script" uid="uid://dxbh176ojtxas" path="res://scripts/slot_watering_can.gd" id="1_kkknh"]
 [ext_resource type="Texture2D" uid="uid://ct0u1rbwcri3u" path="res://assets/sprite1_4.png" id="2_gmm2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgjyg"]
