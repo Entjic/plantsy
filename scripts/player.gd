@@ -87,8 +87,8 @@ func drop(body: Node):
 		print("Can place " + held.name + " on slot")
 		held.drop(self, facing_direction, slot)
 		slot.center(held)
-		slot.held = held
-		held = null
+		slot.held = self.held
+		self.held = null
 		return
 	else:
 		print("Wrong slot for this item.")
