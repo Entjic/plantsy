@@ -41,7 +41,7 @@ func _physics_process(_delta: float) -> void:
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_boost
-		facing_direction = direction  # ✅ Save the last direction for later
+		facing_direction = direction
 		
 		anim_sprite.speed_scale = anim_speed
 		
@@ -85,7 +85,7 @@ func drop(body: Node):
 	var slot: HoldableSlot = body
 	if slot.can_accept(held, facing_direction, self):
 		print("Can place " + held.name + " on slot")
-		held.drop(self, facing_direction)
+		held.drop(self, facing_direction, slot)
 		slot.center(held)
 		slot.held = held
 		held = null
