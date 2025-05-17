@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=13 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="5_p57ef"]
-[ext_resource type="PackedScene" uid="uid://brh8nt1leoxxx" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dxrdygn5oiwj0" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://c1h5c3877t3d2" path="res://scenes/SlotWateringCan.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://daprx2vogkd8f" path="res://scenes/ShopCactus.tscn" id="12_dinhu"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -60,3 +61,6 @@ position = Vector2(35, 190)
 
 [node name="WateringCan" parent="." instance=ExtResource("11_dinhu")]
 position = Vector2(-140, 97)
+
+[node name="ShopCactus" parent="." instance=ExtResource("12_dinhu")]
+position = Vector2(-123, -178)

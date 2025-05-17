@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://daprx2vogkd8f"]
+
+[ext_resource type="Script" path="res://scripts/shop_cactus.gd" id="1_dikpe"]
+[ext_resource type="Texture2D" uid="uid://bkf6d2j2rbj0v" path="res://assets/dummy plant.png" id="2_tgky2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahmto"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o63tp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tgky2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ShopCactus" type="Node2D"]
+light_mask = 2
+script = ExtResource("1_dikpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_ahmto")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_o63tp")
