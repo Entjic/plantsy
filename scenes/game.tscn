@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dkthylb2yu0kq" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
@@ -15,21 +15,22 @@ script = ExtResource("1_iywne")
 
 [node name="Plants" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="Some Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(406, 418)
-
-[node name="Some other Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(382, 335)
+position = Vector2(-385, -355)
 
 [node name="Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(465, 394)
+position = Vector2(401, 407)
 
 [node name="Plant2" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(540, 329)
+position = Vector2(485, 388)
+
+[node name="Plant3" parent="Plants" instance=ExtResource("1_uwrxv")]
+position = Vector2(350, 440)
+
+[node name="Plant4" parent="Plants" instance=ExtResource("1_uwrxv")]
+position = Vector2(448, 333)
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(384, 353)
+position = Vector2(-1, -2)
 script = ExtResource("3_iywne")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -43,12 +44,9 @@ offset_right = -23.0
 offset_bottom = 65.0
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(276, 375)
+position = Vector2(-109, 20)
 
 [node name="Plot" parent="." instance=ExtResource("5_p57ef")]
-position = Vector2(570, 307)
+position = Vector2(185, -48)
 
 [node name="Map" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(370, 291)
-
-[connection signal="start_pressed" from="Player/Camera2D/MainMenu" to="." method="_on_main_menu_start_pressed"]

@@ -60,39 +60,12 @@ func pickup():
 	for body in pickup_area.get_overlapping_bodies():
 		if body is Holdable and held == null:
 			held = body
-			
-			# Save original collision settings
-			held.carried_layer = held.collision_layer
-			held.carried_mask = held.collision_mask
-			held.carried_z_index = held.z_index  # Save original z-index
-			held.z_index = 100  # High value so it's above the player
-
-			# Re-parent to player
-			held.get_parent().remove_child(held)
-			add_child(held)
-			held.position = Vector2(0, -16)
-			held.z_index = 1
-			held.visible = true
-			# Disable collision and physics while carried
-			if held.has_method("set_physics_process"):
-				held.set_physics_process(false)
-			held.collision_layer = 0
-			held.collision_mask = 0
+			print("picking up smth")
+			held.pick_up(self)
 			break
 
 func drop():
 	if held:
-		var parent_node = get_tree().get_root().get_node("Game/Plants")
-		remove_child(held)
-		parent_node.add_child(held)
-
-		# 🧭 Drop it in the direction you're facing
-		var drop_offset := facing_direction.normalized() * 20
-		held.global_position = global_position + drop_offset
-		held.z_index = held.carried_z_index  # Restore previous z
-		# Restore original collision and physics
-		held.set_physics_process(true)
-		held.collision_layer = held.carried_layer
-		held.collision_mask = held.carried_mask
-
+		held.drop(self, facing_direction)
+		print("dropping smth")
 		held = null

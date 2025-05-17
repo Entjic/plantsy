@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://4kuc7bcw7n22"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://4kuc7bcw7n22"]
 
 [ext_resource type="Texture2D" uid="uid://bkmofyhfv7hiy" path="res://assets/dirt_tileset.png" id="1_lspv3"]
 [ext_resource type="Texture2D" uid="uid://b0kerj3rtjqv1" path="res://assets/simple_clip_1.png" id="2_agwqv"]
@@ -837,15 +837,18 @@ texture = ExtResource("3_agwqv")
 2:6/0 = 0
 3:6/0 = 0
 4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 8, -4, 8)
 5:6/0 = 0
 8:3/size_in_atlas = Vector2i(1, 2)
 8:3/0 = 0
 8:3/0/texture_origin = Vector2i(0, 8)
 8:3/0/y_sort_origin = 8
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 4, -4, 4)
 9:3/size_in_atlas = Vector2i(1, 2)
 9:3/0 = 0
 9:3/0/texture_origin = Vector2i(0, 8)
 9:3/0/y_sort_origin = 8
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 0, 4, 0, 4, 4, -4, 4)
 10:3/size_in_atlas = Vector2i(1, 2)
 10:3/0 = 0
 10:3/0/texture_origin = Vector2i(0, 8)
@@ -855,50 +858,8 @@ texture = ExtResource("3_agwqv")
 0:5/0/texture_origin = Vector2i(0, 8)
 0:5/0/y_sort_origin = 8
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6015"]
-texture = ExtResource("3_agwqv")
-3:0/0 = 0
-4:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-0:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-
 [resource]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
@@ -908,4 +869,3 @@ terrain_set_0/terrain_1/color = Color(0.0627451, 0.607843, 0.996078, 1)
 sources/0 = SubResource("TileSetAtlasSource_lajc7")
 sources/1 = SubResource("TileSetAtlasSource_xkm8s")
 sources/3 = SubResource("TileSetAtlasSource_lj6ke")
-sources/4 = SubResource("TileSetAtlasSource_k6015")

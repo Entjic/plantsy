@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var MainMenu = $MainMenu;
+@onready var MainMenu = $Player/Camera2D/MainMenu;
 
 func _ready():
 	get_tree().paused = true;
