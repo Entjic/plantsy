@@ -92,5 +92,5 @@ shape = SubResource("RectangleShape2D_ec5oe")
 [node name="shopTexture" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 15.5)
 sprite_frames = SubResource("SpriteFrames_t4md6")
-animation = &"cactus"
+animation = &"orange"
 offset = Vector2(0, -16)

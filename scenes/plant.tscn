@@ -158,6 +158,8 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_toh6u")
 animation = &"pink"
 
+[node name="PlantTexture" type="AnimatedSprite2D" parent="."]
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 

@@ -7,9 +7,7 @@ var state: PlantState = PlantState.new([self.water_level, self.fertilizer_level]
 var health: PlantHealth = PlantHealth.new(self.state)
 var type:= "sunflower"
 
-@onready var PlantBottom = $PlantBottom;
-@onready var PlantTop = $PlantTop;
-@onready var PlantPot = $PlantPot;
+@onready var PlantTexture = $PlantTexture;
 
 @onready var InspectionArea = $InspectionArea;
 @onready var InspectionInfo = $InspectionInfo;
@@ -38,14 +36,17 @@ func _on_timer_timeout() -> void:
 
 func setTextures():
 	if(type == 'cactus'):
-		$PlantTop.play('plant_1')
-		$PlantBottom.play('plant_1')
-		$PlantPot.play('pink')
-		
+		$PlantTexture.play('cactus')
 	elif(type == 'sunflower'):
-		$PlantTop.play('plant_2')
-		$PlantBottom.play('plant_2')
-		$PlantPot.play('pink')
+		$PlantTexture.play('sunflower')
+	elif(type == 'orange'):
+		$PlantTexture.play('orange')
+	elif(type == 'purple'):
+		$PlantTexture.play('purple')
+	elif(type == 'red'):
+		$PlantTexture.play('red')
+	elif(type == 'rose'):
+		$PlantTexture.play('rose')
 	
 func _process(delta: float) -> void:
 	self.update_show_info()
