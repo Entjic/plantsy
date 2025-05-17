@@ -28,6 +28,7 @@ func _physics_process(_delta: float) -> void:
 	var direction := Vector2(x_direction, y_direction)
 
 	var speed_boost := 1
+	var anim_speed := 1.0
 	
 	if Input.is_action_pressed("use_item") and held:
 		held.use(self)
@@ -37,12 +38,15 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("sneak"):
 		speed_boost = 5
+		anim_speed = 2.0
 
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_boost
 		facing_direction = direction  # ✅ Save the last direction for later
-
+		
+		anim_sprite.speed_scale = anim_speed
+		
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
 				anim_sprite.play("right")
