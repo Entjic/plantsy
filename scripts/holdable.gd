@@ -32,6 +32,8 @@ func pick_up(player: Node):
 	self.set_physics_process(false)
 	self.collision_layer = 0
 	self.collision_mask = 0
+	if (slot):
+		slot.held = null
 	slot = null
 
 func drop(player: Node, facing_direction: Vector2, target: HoldableSlot):

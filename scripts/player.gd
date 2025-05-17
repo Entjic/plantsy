@@ -6,6 +6,7 @@ const SPEED = 60.0
 @onready var pickup_area: Area2D = $PickupArea
 @onready var ui: Control = $Camera2D/CanvasLayer/Interface
 
+
 var held: Holdable = null
 
 var bank: Bank = Bank.new()
@@ -71,7 +72,26 @@ func _physics_process(_delta: float) -> void:
 		held.stop_use()
 
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("analyze"):
+		
+		var note_ui = get_tree().get_root().get_node("Game/CanvasLayer/PlantNote")
+		if note_ui.visible:
+			note_ui.hide()
+		else: 
+			for body in pickup_area.get_overlapping_bodies():
+				if body is not Holdable or body.item_type != "plant":
+					continue
+				
+				var to_body: Vector2 = (body.global_position - self.global_position).normalized()
+				var facing: Vector2 = facing_direction.normalized()
+				var alignment := facing.dot(to_body)
 
+				# Require player to be roughly facing the body
+				if alignment >= 0.7:
+					print("found match")
+					note_ui.show_note(body)
+			
 	if Input.is_action_just_pressed("interact"):
 		for body in pickup_area.get_overlapping_bodies():
 			if body is Holdable and held == null:
@@ -91,8 +111,18 @@ func drop(body: Node):
 		print("Can place " + held.name + " on slot")
 		held.drop(self, facing_direction, slot)
 		slot.center(held)
-		slot.held = held
-		held = null
+		slot.held = self.held
+		
+		print(slot is DeliveryLocation)
+		print(self.held is Plant)
+		if slot is DeliveryLocation and self.held is Plant: 
+			var dl: DeliveryLocation = slot
+			var plnt: Plant = self.held
+			dl.pay(bank, plnt)
+			
+			print()
+		
+		self.held = null
 		return
 	else:
 		print("Wrong slot for this item.")

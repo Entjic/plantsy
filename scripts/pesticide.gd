@@ -23,3 +23,6 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 					anim_player.play("exterminate")
 				body.pesticide_level.value += 0.04
 				break
+
+func stop_use():
+	$AnimatedSprite2D.stop()
