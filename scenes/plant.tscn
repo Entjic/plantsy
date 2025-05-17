@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=25 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
+[ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_ptog4"]
 [ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="4_toh6u"]
 [ext_resource type="Texture2D" uid="uid://c0brkod0kc12t" path="res://assets/arrows1.png" id="5_ptog4"]
 
@@ -101,12 +102,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_a88lo"]
 radius = 39.1152
 
-[sub_resource type="LabelSettings" id="LabelSettings_toh6u"]
-font_size = 9
+[sub_resource type="LabelSettings" id="LabelSettings_8qc6y"]
+font = ExtResource("4_ptog4")
+font_size = 8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2riao"]
 atlas = ExtResource("4_toh6u")
 region = Rect2(64, 145, 16, 4.18597)
+
+[sub_resource type="Curve2D" id="Curve2D_ptog4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 7, 0, 0, 0, 0, 0, -7, 0)
+}
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_toh6u"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -172,25 +180,33 @@ shape = SubResource("CircleShape2D_a88lo")
 [node name="InspectionInfo" type="Node2D" parent="."]
 
 [node name="StateLabel" type="Label" parent="InspectionInfo"]
-offset_left = -4.5
-offset_top = -43.0
-offset_right = 25.5
-offset_bottom = -30.0
+offset_left = -4.0
+offset_top = -35.0
+offset_right = 32.0
+offset_bottom = -25.0
+scale = Vector2(0.41, 0.41)
 text = "56.32"
-label_settings = SubResource("LabelSettings_toh6u")
+label_settings = SubResource("LabelSettings_8qc6y")
 
 [node name="HealthBarSprite" type="Sprite2D" parent="InspectionInfo"]
 position = Vector2(0, -28)
 texture = SubResource("AtlasTexture_2riao")
 
-[node name="LineSprite" type="Sprite2D" parent="InspectionInfo/HealthBarSprite"]
-position = Vector2(6.96875, -1.43051e-06)
+[node name="Path2D" type="Path2D" parent="InspectionInfo/HealthBarSprite"]
+curve = SubResource("Curve2D_ptog4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="InspectionInfo/HealthBarSprite/Path2D"]
+position = Vector2(7, 0)
+rotation = 3.14159
+
+[node name="LineSprite" type="Sprite2D" parent="InspectionInfo/HealthBarSprite/Path2D/PathFollow2D"]
+position = Vector2(0, 8.55097e-07)
 scale = Vector2(0.000976566, 6)
 texture = SubResource("GradientTexture1D_ptog4")
 
 [node name="ArrowSprite" type="AnimatedSprite2D" parent="InspectionInfo"]
-position = Vector2(-11.5, -36)
-scale = Vector2(0.5625, 0.5625)
+position = Vector2(-8, -34)
+scale = Vector2(0.28125, 0.28125)
 sprite_frames = SubResource("SpriteFrames_kp45f")
 animation = &"red"
 
