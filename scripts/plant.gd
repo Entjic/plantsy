@@ -5,8 +5,7 @@ var health: float = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_to_group("plants")
-	item_type = "flower"
+	item_type = "plant"
 	var timer := Timer.new()
 	add_child(timer)
 	timer.wait_time = 1.0

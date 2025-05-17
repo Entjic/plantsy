@@ -65,7 +65,19 @@ func pickup():
 			break
 
 func drop():
-	if held:
-		held.drop(self, facing_direction)
-		print("dropping smth")
-		held = null
+	if not held:
+		return
+	
+	for body in pickup_area.get_overlapping_bodies():
+		if body is HoldableSlot:
+			var slot: HoldableSlot = body
+			if slot.can_accept(held):
+				print("Can place " + held.name + " on slot")
+				held.drop(self, facing_direction)
+				slot.center(held)
+				held = null
+				return
+			else:
+				print("Wrong slot for this item.")
+	
+	print("No valid slot to drop on.")
