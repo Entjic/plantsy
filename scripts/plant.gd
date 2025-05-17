@@ -11,6 +11,11 @@ func _ready():
 func _process(_delta: float) -> void:
 	pass
 
+func _on_Timer_timeout():
+	print("Timer triggered!")
+	# Do something here
+
+
 # Optional: Set a maximum water level
 const MAX_WATER_LEVEL = 100.0
 

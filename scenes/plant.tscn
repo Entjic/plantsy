@@ -33,3 +33,7 @@ shape = SubResource("RectangleShape2D_odjdt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pppyj")
 offset = Vector2(0, -8)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

@@ -34,7 +34,7 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(272, 389)
+position = Vector2(276, 375)
 
 [node name="Plot" parent="." instance=ExtResource("5_p57ef")]
 position = Vector2(570, 307)
