@@ -11,7 +11,7 @@ func _init(health: PlantHealth):
 func progress(current: float) -> float:
 	if health.value < 66.0:
 		return -0.05
-	elif health.value < 66.0:
+	elif health.value < 33.0:
 		return value
 	else:
 		return 0
