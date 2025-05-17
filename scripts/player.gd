@@ -67,7 +67,20 @@ func _physics_process(_delta: float) -> void:
 		held.stop_use()
 
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("analyze"):
+		for body in pickup_area.get_overlapping_bodies():
+			if body is not Holdable or body.item_type != "plant":
+				continue
+			
+			var to_body: Vector2 = (body.global_position - self.global_position).normalized()
+			var facing: Vector2 = facing_direction.normalized()
+			var alignment := facing.dot(to_body)
 
+			# Require player to be roughly facing the body
+			if alignment >= 0.7:
+				print("found match")
+			
 	if Input.is_action_just_pressed("interact"):
 		for body in pickup_area.get_overlapping_bodies():
 			if body is Holdable and held == null:
