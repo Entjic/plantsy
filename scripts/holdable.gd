@@ -20,8 +20,11 @@ func pick_up(player: Node):
 	# Re-parent to player
 	parent_node = self.get_parent()
 	parent_node.remove_child(self)
-	player.add_child(self)
-	self.position = Vector2(0, -16)
+	var anchor := player.get_node("HoldableAnchor")
+	
+	anchor.add_child(self)
+	self.position = Vector2.ZERO  # It will inherit anchor's offset
+	
 	self.z_index = 1
 	# Disable collision and physics while carried
 	self.set_physics_process(false)
@@ -30,7 +33,8 @@ func pick_up(player: Node):
 
 func drop(player: Node, facing_direction: Vector2):
 	print("Trying to drop node " + self.name)
-	player.remove_child(self)
+	var anchor := player.get_node("HoldableAnchor")
+	anchor.remove_child(self)
 	parent_node.add_child(self)
 
 	# 🧭 Drop it in the direction you're facing
@@ -43,6 +47,5 @@ func drop(player: Node, facing_direction: Vector2):
 	self.collision_layer = self.carried_layer
 	self.collision_mask = self.carried_mask
 
-func use(user: Node) -> void:
-	# Default implementation - override in subclasses if needed
-	print("Used item: %s by %s" % [self.name, user.name])
+func use(_node: Node, facing_direction: Vector2) -> void:
+	pass

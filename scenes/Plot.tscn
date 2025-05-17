@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cid55etvodfri"]
+
+[ext_resource type="Script" uid="uid://dfp1a3uoysgm" path="res://scripts/plot.gd" id="1_8jf6g"]
+[ext_resource type="Texture2D" uid="uid://bpbfoa558vbbn" path="res://assets/plot-demo.png" id="2_53k8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32g4s"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51cwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_53k8f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Plot" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_8jf6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_32g4s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+sprite_frames = SubResource("SpriteFrames_51cwa")
+offset = Vector2(0, -8)

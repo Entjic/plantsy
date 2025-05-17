@@ -30,8 +30,6 @@ func _physics_process(_delta: float) -> void:
 	var speed_boost := 1
 	var anim_speed := 1.0
 	
-	if Input.is_action_pressed("use_item") and held:
-		held.use(self)
 	
 	if Input.is_action_just_pressed("money_cheat"):
 		bank.give(100)
@@ -61,6 +59,9 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 		anim_sprite.stop()
+	
+	if Input.is_action_pressed("use_item") and held:
+		held.use(self, facing_direction)
 
 	move_and_slide()
 
@@ -87,7 +88,7 @@ func drop():
 	for body in pickup_area.get_overlapping_bodies():
 		if body is HoldableSlot:
 			var slot: HoldableSlot = body
-			if slot.can_accept(held):
+			if slot.can_accept(held, facing_direction, self):
 				print("Can place " + held.name + " on slot")
 				held.drop(self, facing_direction)
 				slot.center(held)
