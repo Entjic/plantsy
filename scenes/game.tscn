@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="13_fjien"]
 
-[node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iywne")
 
