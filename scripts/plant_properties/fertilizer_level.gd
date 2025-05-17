@@ -8,4 +8,4 @@ func _init():
 
 
 func progress(current: float) -> float:
-	return -(1.0 / 100.0) * log(current + 1)
+	return -(1.0 / 50.0) * log(current + 1)
