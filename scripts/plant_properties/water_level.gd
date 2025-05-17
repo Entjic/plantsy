@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func progress(current: float) -> float:
-	return -(1.0 / 40.0) * log(current + 1)
+	return -(1.0 / 20.0) * log(current + 1)

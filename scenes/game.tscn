@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=14 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
@@ -6,14 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://l77nqbbg0lqr" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cid55etvodfri" path="res://scenes/Plot.tscn" id="5_p57ef"]
-[ext_resource type="PackedScene" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
-[ext_resource type="PackedScene" path="res://scenes/SlotWateringCan.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dxrdygn5oiwj0" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://c1h5c3877t3d2" path="res://scenes/SlotWateringCan.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://daprx2vogkd8f" path="res://scenes/ShopCactus.tscn" id="12_dinhu"]
 [ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
 
-[node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iywne")
 
@@ -51,6 +51,8 @@ position = Vector2(-109, 20)
 [node name="Plot" parent="." instance=ExtResource("5_p57ef")]
 position = Vector2(185, -48)
 
+[node name="SlotPlant" parent="." instance=ExtResource("5_p57ef")]
+
 [node name="Map" parent="." instance=ExtResource("3_lnu2h")]
 
 [node name="SlotWateringCan" parent="." instance=ExtResource("10_vtaks")]
@@ -61,6 +63,12 @@ position = Vector2(35, 190)
 
 [node name="WateringCan" parent="." instance=ExtResource("11_dinhu")]
 position = Vector2(-140, 97)
+
+[node name="ShopCactus" parent="." instance=ExtResource("12_dinhu")]
+position = Vector2(-60, -18)
+
+[node name="Plant" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(37, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_dinhu")

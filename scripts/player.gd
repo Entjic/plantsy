@@ -41,7 +41,7 @@ func _physics_process(_delta: float) -> void:
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_boost
-		facing_direction = direction  
+		facing_direction = direction  # ✅ Save the last direction for later
 		
 		anim_sprite.speed_scale = anim_speed
 		
@@ -65,41 +65,41 @@ func _physics_process(_delta: float) -> void:
 
 	if Input.is_action_just_released("use_item") and held and "stop_use" in held:
 		held.stop_use()
-			
+
 	move_and_slide()
 
-	# Check for pickup or drop
-	if Input.is_action_just_pressed("interact"):  # define this in Input Map
-		if held:
-			drop()
-		else:
-			pickup()
+	if Input.is_action_just_pressed("interact"):
+		for body in pickup_area.get_overlapping_bodies():
+			if body is Holdable and held == null:
+				pickup(body)
+			elif body is HoldableSlot and held != null:
+				drop(body)
+			elif body is shop:
+				buy(body)
 
+func pickup(body: Node):
+	held = body
+	held.pick_up(self)
 
-func pickup():
-	for body in pickup_area.get_overlapping_bodies():
-		if body is Holdable and held == null:
-			held = body
-			
-			print("picking up smth")
-			held.pick_up(self)
-			break
-
-func drop():
-	if not held:
+func drop(body: Node):
+	var slot: HoldableSlot = body
+	if slot.can_accept(held, facing_direction, self):
+		print("Can place " + held.name + " on slot")
+		held.drop(self, facing_direction)
+		slot.center(held)
+		slot.held = held
+		held = null
 		return
+	else:
+		print("Wrong slot for this item.")
 	
-	for body in pickup_area.get_overlapping_bodies():
-		if body is HoldableSlot:
-			var slot: HoldableSlot = body
-			if slot.can_accept(held, facing_direction, self):
-				print("Can place " + held.name + " on slot")
-				held.drop(self, facing_direction, slot)
-				slot.center(held)
-				slot.held = held
-				held = null
-				return
-			else:
-				print("Wrong slot for this item.")
-	
-	print("No valid slot to drop on.")
+func buy(shop: Node):
+	if held:
+		print("you are already holding item :(")
+		return
+
+	if bank.pay(shop.price):
+		var item = shop.reciveItem()
+		get_tree().current_scene.add_child(item)
+		item.pick_up(self)
+		held = item
