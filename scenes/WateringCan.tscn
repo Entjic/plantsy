@@ -56,7 +56,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0dpr"]
 height = 38.0
 
-[node name="Watering Can" type="StaticBody2D"]
+[node name="WateringCan" type="StaticBody2D"]
 collision_layer = 3
 script = ExtResource("1_k0dpr")
 
