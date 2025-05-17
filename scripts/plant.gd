@@ -1,3 +1,4 @@
+class_name Plant
 extends Holdable
 
 var water_level: WaterLevel = WaterLevel.new()
