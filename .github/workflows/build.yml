@@ -3,7 +3,7 @@ name: Build Godot Game
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   export:
@@ -17,8 +17,8 @@ jobs:
     - name: Set up Godot
       uses: chickensoft-games/setup-godot@v1
       with:
-        godot-version: 4.2.1 # or your current Godot version
-        export-templates: true
+        version: 4.4.1  # Correct key
+        include-templates: true  # Correct key
 
     - name: Export to Web (HTML5)
       run: |
