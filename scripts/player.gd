@@ -9,7 +9,6 @@ var held: Holdable = null
 
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing
 
-#
 func _process(_delta):
 	if held:
 		held.position = Vector2(0, -16)
@@ -29,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		velocity = direction * SPEED * speed_boost
-		facing_direction = direction  # ✅ Save the last direction for later
+		facing_direction = direction  # Save the last direction for later
 
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
@@ -86,7 +85,7 @@ func drop():
 		remove_child(held)
 		parent_node.add_child(held)
 
-		# 🧭 Drop it in the direction you're facing
+		# Drop it in the direction you're facing
 		var drop_offset := facing_direction.normalized() * 20
 		held.global_position = global_position + drop_offset
 		held.z_index = held.carried_z_index  # Restore previous z

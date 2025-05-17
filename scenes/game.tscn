@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=9 format=3 uid="uid://if0gcs8qoahl"]
 
-[ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
+[ext_resource type="PackedScene" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
@@ -41,6 +41,7 @@ offset_left = -150.0
 offset_top = -77.0
 offset_right = 29.0
 offset_bottom = 56.0
+
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(276, 375)
 
