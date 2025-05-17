@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1h5c3877t3d2"]
+
+[ext_resource type="Script" uid="uid://0sicaf37xwvp" path="res://scripts/watering_can_holder.gd" id="1_3jok0"]
+[ext_resource type="Texture2D" uid="uid://ct0u1rbwcri3u" path="res://assets/sprite1_4.png" id="2_gmm2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgjyg"]
+size = Vector2(18, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0lhx"]
+atlas = ExtResource("2_gmm2j")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5k6r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0lhx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WateringCanHoldable" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_kgjyg")
+script = ExtResource("1_3jok0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u5k6r")
+offset = Vector2(0, -8)
