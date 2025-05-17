@@ -9,6 +9,8 @@ var type:= "sunflower"
 @onready var PlantBottom = $PlantBottom;
 @onready var PlantTop = $PlantTop;
 @onready var PlantPot = $PlantPot;
+@onready var InspectionArea = $InspectionArea;
+@onready var InspectionInfo = $InspectionInfo;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,4 +39,12 @@ func setTextures():
 		$PlantBottom.play('plant_2')
 		$PlantPot.play('pink')
 	
-	
+func _process(delta: float) -> void:
+	self.update_show_info()
+
+func update_show_info():
+	for body in self.InspectionArea.get_overlapping_bodies():
+		if body is CharacterBody2D:
+			InspectionInfo.visible = true
+			return
+	InspectionInfo.visible = false

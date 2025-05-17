@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=23 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Texture2D" uid="uid://bkf6d2j2rbj0v" path="res://assets/dummy plant.png" id="1_fi0kw"]
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
+[ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="4_toh6u"]
+[ext_resource type="Texture2D" uid="uid://c0brkod0kc12t" path="res://assets/arrows1.png" id="5_ptog4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjdt"]
 size = Vector2(16, 16.125)
@@ -88,6 +90,46 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_a88lo"]
+radius = 39.1152
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2riao"]
+atlas = ExtResource("4_toh6u")
+region = Rect2(64, 145, 16, 4.18597)
+
+[sub_resource type="Gradient" id="Gradient_toh6u"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ptog4"]
+gradient = SubResource("Gradient_toh6u")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68tkh"]
+atlas = ExtResource("5_ptog4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqtiq"]
+atlas = ExtResource("5_ptog4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kp45f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68tkh")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqtiq")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
 [node name="Plant" type="StaticBody2D"]
 y_sort_enabled = true
 collision_layer = 3
@@ -115,5 +157,31 @@ animation = &"pink"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="InspectionArea" type="Area2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InspectionArea"]
+shape = SubResource("CircleShape2D_a88lo")
+
+[node name="InspectionInfo" type="Node2D" parent="."]
+
+[node name="StateLabel" type="Label" parent="InspectionInfo"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealthBarSprite" type="Sprite2D" parent="InspectionInfo"]
+position = Vector2(0, -28)
+texture = SubResource("AtlasTexture_2riao")
+
+[node name="LineSprite" type="Sprite2D" parent="InspectionInfo/HealthBarSprite"]
+position = Vector2(6.96875, -1.43051e-06)
+scale = Vector2(0.000976566, 6)
+texture = SubResource("GradientTexture1D_ptog4")
+
+[node name="ArrowSprite" type="AnimatedSprite2D" parent="InspectionInfo"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_kp45f")
+animation = &"red"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
