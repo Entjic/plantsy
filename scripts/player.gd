@@ -38,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("sneak"):
 		speed_boost = 5
-		anim_speed = 2.0
+		anim_speed = 5.0
 
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
