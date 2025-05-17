@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://p1204yu64b0t"]
+
+[ext_resource type="Script" uid="uid://delde70pt2jhf" path="res://scripts/ui/interface.gd" id="1_va005"]
+[ext_resource type="Script" uid="uid://mnjuw33p786c" path="res://scripts/ui/balance_label.gd" id="2_77xom"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_va005")
+
+[node name="BalanceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_77xom")

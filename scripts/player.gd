@@ -4,12 +4,16 @@ const SPEED = 60.0
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var pickup_area: Area2D = $PickupArea
+@onready var ui: Control = $Camera2D/Interface
 
 var held: Holdable = null
 
 var bank: Bank = Bank.new()
 
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing
+
+func _ready() -> void:
+	ui.bank = bank
 
 #
 func _process(_delta):
