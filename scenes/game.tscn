@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=10 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
@@ -42,14 +42,6 @@ position = Vector2(448, 333)
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(-1, -2)
 script = ExtResource("3_iywne")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
-[node name="Interface" parent="Player/Camera2D" instance=ExtResource("6_0tnpc")]
-z_index = 10
-metadata/_edit_use_anchors_ = true
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(-109, 20)
