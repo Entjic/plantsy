@@ -42,6 +42,7 @@ func _on_timer_timeout() -> void:
 		
 
 func setTextures():
+	item_type = "plant"
 	if(type == 'cactus'):
 		$PlantTexture.play('cactus')
 	elif(type == 'sunflower'):
