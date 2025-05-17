@@ -8,15 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="5_p57ef"]
-[ext_resource type="PackedScene" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://c1h5c3877t3d2" path="res://scenes/SlotWateringCan.tscn" id="10_vtaks"]
-[ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
-[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="13_fjien"]
 [ext_resource type="PackedScene" uid="uid://w6pamfp40ick" path="res://scenes/Pesticide.tscn" id="10_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="11_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://daprx2vogkd8f" path="res://scenes/ShopCactus.tscn" id="12_dinhu"]
+[ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="13_fjien"]
 
+[node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_iywne")
 
@@ -102,6 +100,7 @@ price = 30.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_dinhu")
 autoplay = true
+
 [node name="Plant" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(37, 0)
 
