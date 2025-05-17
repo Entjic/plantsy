@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dkthylb2yu0kq" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scripts/player.gd" id="3_iywne"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bm0nwpjrfyuqf" path="res://scenes/Watering Can.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/Plot.tscn" id="5_p57ef"]
 
 [node name="Game" type="Node2D"]
@@ -38,10 +38,10 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="MainMenu" parent="Player/Camera2D" instance=ExtResource("2_p57ef")]
-offset_left = -150.0
-offset_top = -77.0
-offset_right = 29.0
-offset_bottom = 56.0
+offset_left = -148.0
+offset_top = -68.0
+offset_right = -23.0
+offset_bottom = 65.0
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(-109, 20)

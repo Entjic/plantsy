@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cue3olnfe2bv1"]
+[gd_scene load_steps=3 format=3 uid="uid://cue3olnfe2bv1"]
 
 [ext_resource type="Script" uid="uid://dd8e01t0lxlnc" path="res://scripts/main_menu.gd" id="1_yqorp"]
+[ext_resource type="FontFile" uid="uid://dj7fnqvxceafj" path="res://fonts/Xolonium-Regular.ttf" id="2_0ykhv"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -10,21 +11,22 @@ anchors_preset = 0
 offset_right = 123.0
 offset_bottom = 135.0
 script = ExtResource("1_yqorp")
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 2.0
-offset_right = 92.0
-offset_bottom = 25.0
+offset_left = 32.0
+offset_right = 96.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_0ykhv")
 text = "Plantsy"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 7.0
+offset_left = 8.0
 offset_top = 24.0
-offset_right = 116.0
-offset_bottom = 125.0
+offset_right = 120.0
+offset_bottom = 128.0
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -32,10 +34,12 @@ text = "PLAY"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ykhv")
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ykhv")
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
