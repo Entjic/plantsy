@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxrdygn5oiwj0" path="res://scenes/SlotFertilizer.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://c1h5c3877t3d2" path="res://scenes/SlotWateringCan.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
-[ext_resource type="PackedScene" uid="uid://daprx2vogkd8f" path="res://scenes/ShopCactus.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="12_dinhu"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -64,8 +64,40 @@ position = Vector2(35, 190)
 [node name="WateringCan" parent="." instance=ExtResource("11_dinhu")]
 position = Vector2(-140, 97)
 
-[node name="ShopCactus" parent="." instance=ExtResource("12_dinhu")]
-position = Vector2(-60, -18)
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Plant" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(37, 0)
+[node name="CactusShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+position = Vector2(-11, -79)
+itemType = "cactus"
+item = ExtResource("1_uwrxv")
+price = 10.0
+
+[node name="SunflowerShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+position = Vector2(17, -79)
+itemType = "sunflower"
+item = ExtResource("1_uwrxv")
+price = 20.0
+
+[node name="OrangeShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+position = Vector2(45, -80)
+itemType = "orange"
+item = ExtResource("1_uwrxv")
+price = 15.0
+
+[node name="PurpleShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+position = Vector2(74, -80)
+itemType = "purple"
+item = ExtResource("1_uwrxv")
+price = 20.0
+
+[node name="RedShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+position = Vector2(102, -80)
+itemType = "red"
+item = ExtResource("1_uwrxv")
+price = 20.0
+
+[node name="RoseShop" parent="Node2D" instance=ExtResource("12_dinhu")]
+position = Vector2(129, -80)
+itemType = "rose"
+item = ExtResource("1_uwrxv")
+price = 30.0
