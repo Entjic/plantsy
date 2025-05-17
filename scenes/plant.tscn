@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=24 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Texture2D" uid="uid://bkf6d2j2rbj0v" path="res://assets/dummy plant.png" id="1_fi0kw"]
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
@@ -93,6 +93,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_a88lo"]
 radius = 39.1152
 
+[sub_resource type="LabelSettings" id="LabelSettings_toh6u"]
+font_size = 9
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2riao"]
 atlas = ExtResource("4_toh6u")
 region = Rect2(64, 145, 16, 4.18597)
@@ -167,8 +170,12 @@ shape = SubResource("CircleShape2D_a88lo")
 [node name="InspectionInfo" type="Node2D" parent="."]
 
 [node name="StateLabel" type="Label" parent="InspectionInfo"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -4.5
+offset_top = -43.0
+offset_right = 25.5
+offset_bottom = -30.0
+text = "56.32"
+label_settings = SubResource("LabelSettings_toh6u")
 
 [node name="HealthBarSprite" type="Sprite2D" parent="InspectionInfo"]
 position = Vector2(0, -28)
@@ -180,7 +187,8 @@ scale = Vector2(0.000976566, 6)
 texture = SubResource("GradientTexture1D_ptog4")
 
 [node name="ArrowSprite" type="AnimatedSprite2D" parent="InspectionInfo"]
-visible = false
+position = Vector2(-11.5, -36)
+scale = Vector2(0.5625, 0.5625)
 sprite_frames = SubResource("SpriteFrames_kp45f")
 animation = &"red"
 

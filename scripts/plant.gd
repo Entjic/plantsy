@@ -10,8 +10,11 @@ var type:= "sunflower"
 @onready var PlantBottom = $PlantBottom;
 @onready var PlantTop = $PlantTop;
 @onready var PlantPot = $PlantPot;
+
 @onready var InspectionArea = $InspectionArea;
 @onready var InspectionInfo = $InspectionInfo;
+@onready var StateLabel = $InspectionInfo/StateLabel;
+@onready var ArrowSprite = $InspectionInfo/ArrowSprite;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,6 +33,8 @@ func _on_timer_timeout() -> void:
 	+ " pestecide: " + str(Util.round_with_decimals(self.pesticide_level.value, 2))
 	+ " -> state: " + str(Util.round_with_decimals(self.state.value, 2))
 	+ " => ♥: " + str(Util.round_with_decimals(self.health.value, 2)))
+	
+	StateLabel = str(Util.round_with_decimals(self.state.value - 75.0, 2))
 
 func setTextures():
 	if(type == 'cactus'):
