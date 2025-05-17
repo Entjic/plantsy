@@ -8,7 +8,7 @@ func _ready():
 	self.set_mainmenu_size();
 	get_tree().paused = true;
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass;
 
 func _on_size_changed():
