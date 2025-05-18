@@ -22,5 +22,5 @@ func pay(amount: float):
 		balance -= amount
 		return true;
 	else:
-		tree.get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Not enough balance :(")
+		tree.get_root().get_node("Game/CanvasLayer/MessageQueue").show_message(str(amount-balance) + " balance missing" )
 		return false;

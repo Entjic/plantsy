@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcrxukcbjmlq7"]
+[gd_scene load_steps=2 format=3 uid="uid://bqj27bxk21ymx"]
 
-[ext_resource type="Script" uid="uid://bave0lxilkhqv" path="res://scripts/ui/error_queue.gd" id="1_dwu5i"]
+[ext_resource type="Script" path="res://scripts/ui/error_queue.gd" id="1_dwu5i"]
 
 [node name="ErrorQueue" type="Control"]
 layout_mode = 3
