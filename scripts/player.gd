@@ -108,19 +108,22 @@ func pickup(body: Node):
 func drop(body: Node):
 	var slot: HoldableSlot = body
 	if slot.can_accept(held, facing_direction, self):
+		if slot is DeliveryLocation and self.held is Plant: 
+			var plnt: Plant = self.held
+			if (plnt.age.value < 24):
+				return
+			
 		print("Can place " + held.name + " on slot")
 		held.drop(self, facing_direction, slot)
 		slot.center(held)
 		slot.held = self.held
 		
-		print(slot is DeliveryLocation)
-		print(self.held is Plant)
 		if slot is DeliveryLocation and self.held is Plant: 
 			var dl: DeliveryLocation = slot
 			var plnt: Plant = self.held
-			dl.pay(bank, plnt)
-			
-			print()
+			if plnt.age.value >= 24:
+				dl.pay(bank, plnt)
+			return
 		
 		self.held = null
 		return
