@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r87dh")
 }],
-"loop": false,
+"loop": true,
 "name": &"pest_start_left",
 "speed": 5.0
 }, {
@@ -85,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e1hmo")
 }],
-"loop": false,
+"loop": true,
 "name": &"pest_start_right",
 "speed": 5.0
 }, {
@@ -130,7 +130,7 @@ shape = SubResource("RectangleShape2D_5mp3v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_r5rtg")
-animation = &"pest_right"
+animation = &"pest_start_right"
 offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]
