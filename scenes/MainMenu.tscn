@@ -7,7 +7,7 @@ process_mode = 3
 z_index = 99
 layout_mode = 3
 anchors_preset = 0
-offset_right = 192.0
+offset_right = 336.0
 offset_bottom = 135.0
 script = ExtResource("1_yqorp")
 metadata/_edit_group_ = true
@@ -38,5 +38,30 @@ text = "Settings"
 layout_mode = 2
 text = "Quit"
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 24.0
+offset_right = 528.0
+offset_bottom = 120.0
+text = "Play as a peaceful 
+monk tending to a
+garden. Balance the
+plants' needs."
+
+[node name="TutorialButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 416.0
+offset_bottom = 152.0
+text = ">"
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
