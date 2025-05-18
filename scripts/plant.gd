@@ -9,6 +9,7 @@ var health: PlantHealth = PlantHealth.new(self.state)
 var worth: PlantWorth = PlantWorth.new(self.health)
 var age: PlantAge = PlantAge.new()
 var type:= "sunflower"
+var plant_name: String
 
 @onready var PlantTexture = $PlantTexture;
 
@@ -17,6 +18,54 @@ var type:= "sunflower"
 @onready var StateLabel = $InspectionInfo/StateLabel;
 @onready var ArrowSprite = $InspectionInfo/ArrowSprite;
 @onready var HealthBarPath = $InspectionInfo/HealthBarSprite/Path2D/PathFollow2D;
+
+func _init() -> void:
+	var names = [
+		"Günther",
+		"Franz",
+		"Gisela",
+		"Bernhard",
+		"Ida",
+		"Maximilian",
+		"Paul",
+		"Konrad",
+		"Carmen",
+		"Luca",
+		"Tom",
+		"Tamara",
+		"Tim",
+		"Joshua",
+		"Alexandra",
+		"Hermine",
+		"Tom Cruz",
+		"Michael Jackson",
+		"Santa Claus",
+		"Egon",
+		"Martin",
+		"Sabine",
+		"Susanne",
+		"Magdalena",
+		"Johanna",
+		"Jasmin",
+		"Anton",
+		"Peter",
+		"Petros",
+		"Anita",
+		"Sascha",
+		"Karl",
+		"Karlos",
+		"Karla",
+		"Martina",
+		"Sebastian",
+		"Cornelia",
+		"Cassandra",
+		"Angelina",
+		"Sandy",
+		"Marc",
+		"Lena"
+	];
+	
+	self.plant_name = names.pick_random()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
