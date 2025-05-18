@@ -118,7 +118,9 @@ func _on_timer_timeout() -> void:
 func setTextures():
 	item_type = "plant"
 	
-	if self.age.value < 10: 
+	if self.worth.value <= 0:
+		$PlantTexture.play('dead')
+	elif self.age.value < 10: 
 		$PlantTexture.play('jung')
 	elif(type == 'cactus'):
 		$PlantTexture.play('cactus')

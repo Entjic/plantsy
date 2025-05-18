@@ -14,6 +14,11 @@ func _process(delta: float) -> void:
 			$AnimatedSprite2D.play("pest_stop_right")
 		else:
 			$AnimatedSprite2D.play("pest_stop_left")
+	elif !pesting:
+		if(direction == "right"):
+			$AnimatedSprite2D.play("pest_right")
+		else:
+			$AnimatedSprite2D.play("pest_left")
 
 func use(_node: Node, facing_direction: Vector2) -> void:
 	var player := _node as Node2D  # Make sure we can access global_position

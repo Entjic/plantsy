@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcbrarehldn1j"]
+[gd_scene load_steps=19 format=3 uid="uid://bcbrarehldn1j"]
 
 [ext_resource type="Script" uid="uid://cvl67urdkblsw" path="res://scripts/fertilizer.gd" id="1_br11q"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="2_br11q"]
 [ext_resource type="Texture2D" uid="uid://h2l0rvh8rcmj" path="res://assets/sprite1_8.png" id="2_vour4"]
+[ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="4_ixdti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0dpr"]
 size = Vector2(12, 14)
@@ -19,13 +20,17 @@ region = Rect2(128, 96, 16, 16)
 atlas = ExtResource("2_br11q")
 region = Rect2(144, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6aiq1"]
-atlas = ExtResource("2_br11q")
-region = Rect2(144, 96, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vour4"]
 atlas = ExtResource("2_br11q")
 region = Rect2(112, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aiq1"]
+atlas = ExtResource("4_ixdti")
+region = Rect2(48, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7dto"]
+atlas = ExtResource("4_ixdti")
+region = Rect2(64, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrpdf"]
 atlas = ExtResource("2_vour4")
@@ -38,6 +43,10 @@ region = Rect2(128, 96, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfbht"]
 atlas = ExtResource("2_vour4")
 region = Rect2(112, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry2ht"]
+atlas = ExtResource("4_ixdti")
+region = Rect2(48, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vkpe"]
 atlas = ExtResource("2_vour4")
@@ -54,9 +63,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ixdti")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6aiq1")
 }],
 "loop": false,
 "name": &"fert_start_left",
@@ -65,6 +71,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vour4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aiq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7dto")
 }],
 "loop": false,
 "name": &"fert_start_right",
@@ -86,6 +98,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ry2ht")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2vkpe")
 }],
 "loop": false,
@@ -94,6 +109,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0dpr"]
+height = 38.0
 
 [node name="Fertilizer" type="StaticBody2D"]
 collision_layer = 3
