@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=29 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
 [ext_resource type="Texture2D" uid="uid://balmf7ryvf3mb" path="res://assets/sprite1_91.png" id="4_8qc6y"]
+[ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="4_ljraq"]
 [ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_ptog4"]
 [ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="4_toh6u"]
 [ext_resource type="Texture2D" uid="uid://c0brkod0kc12t" path="res://assets/arrows1.png" id="5_ptog4"]
@@ -28,6 +29,10 @@ animations = [{
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp45f"]
 atlas = ExtResource("4_toh6u")
 region = Rect2(176, 144, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddi4x"]
+atlas = ExtResource("4_ljraq")
+region = Rect2(160, 144, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ptog4"]
 atlas = ExtResource("4_8qc6y")
@@ -61,6 +66,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"cactus",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddi4x")
+}],
+"loop": true,
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -179,7 +192,7 @@ animation = &"pink"
 [node name="PlantTexture" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_ddi4x")
-animation = &"jung"
+animation = &"dead"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
