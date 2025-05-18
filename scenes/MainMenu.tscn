@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cue3olnfe2bv1"]
+[gd_scene load_steps=2 format=3 uid="uid://cue3olnfe2bv1"]
 
 [ext_resource type="Script" uid="uid://dd8e01t0lxlnc" path="res://scripts/main_menu.gd" id="1_yqorp"]
-[ext_resource type="FontFile" uid="uid://dj7fnqvxceafj" path="res://fonts/Xolonium-Regular.ttf" id="2_0ykhv"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -18,7 +17,6 @@ layout_mode = 0
 offset_left = 64.0
 offset_right = 128.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_0ykhv")
 text = "Plantsy"
 metadata/_edit_group_ = true
 
@@ -34,12 +32,10 @@ text = "PLAY"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_0ykhv")
 text = "Settings"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_0ykhv")
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

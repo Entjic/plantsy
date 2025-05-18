@@ -94,7 +94,7 @@ shape = SubResource("RectangleShape2D_5mp3v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r5rtg")
-animation = &"pest_stop_right"
+animation = &"pest_start_left"
 offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]
