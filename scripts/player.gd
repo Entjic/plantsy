@@ -36,8 +36,8 @@ func _physics_process(_delta: float) -> void:
 		bank.give(100)
 	
 	if Input.is_action_pressed("sneak"):
-		speed_boost = 5
-		anim_speed = 5.0
+		speed_boost = 2
+		anim_speed = 2
 
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()

@@ -1,11 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=31 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
 [ext_resource type="Texture2D" uid="uid://balmf7ryvf3mb" path="res://assets/sprite1_91.png" id="4_8qc6y"]
 [ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_ptog4"]
 [ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="4_toh6u"]
-[ext_resource type="Texture2D" uid="uid://c0brkod0kc12t" path="res://assets/arrows1.png" id="5_ptog4"]
+[ext_resource type="SpriteFrames" uid="uid://bbvr5i3yvd3si" path="res://assets/sprites/arrow.tres" id="7_2riao"]
 [ext_resource type="AudioStream" uid="uid://s5b7nbsvnjj4" path="res://audio/735168__irolan__item-pickup-chime.wav" id="7_8qc6y"]
 [ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="8_ljraq"]
 [ext_resource type="Texture2D" uid="uid://dvktk41e48v3a" path="res://assets/sprite1_94.png" id="9_2riao"]
@@ -150,33 +150,6 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ptog4"]
 gradient = SubResource("Gradient_toh6u")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_68tkh"]
-atlas = ExtResource("5_ptog4")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cqtiq"]
-atlas = ExtResource("5_ptog4")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kp45f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_68tkh")
-}],
-"loop": true,
-"name": &"green",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cqtiq")
-}],
-"loop": true,
-"name": &"red",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcta3"]
 atlas = ExtResource("9_2riao")
 region = Rect2(80, 224, 16, 16)
@@ -257,8 +230,8 @@ texture = SubResource("GradientTexture1D_ptog4")
 [node name="ArrowSprite" type="AnimatedSprite2D" parent="InspectionInfo"]
 position = Vector2(-8, -34)
 scale = Vector2(0.28125, 0.28125)
-sprite_frames = SubResource("SpriteFrames_kp45f")
-animation = &"red"
+sprite_frames = ExtResource("7_2riao")
+animation = &"green"
 
 [node name="Sounds" type="Node2D" parent="."]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b37n4lv3j45vb"]
+[gd_scene load_steps=17 format=3 uid="uid://b37n4lv3j45vb"]
 
 [ext_resource type="Script" uid="uid://dydar1logsdha" path="res://scripts/plant_note.gd" id="1_nm86x"]
 [ext_resource type="Texture2D" uid="uid://cf6dp8fwb1y6w" path="res://assets/notebook.png" id="2_57p1b"]
 [ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_8wknq"]
 [ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="4_7fnha"]
+[ext_resource type="Texture2D" uid="uid://ja6lwfbxy2yw" path="res://assets/sprite1_95.png" id="5_8ai86"]
+[ext_resource type="SpriteFrames" uid="uid://bbvr5i3yvd3si" path="res://assets/sprites/arrow.tres" id="6_vrvs4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7fnha"]
 font = ExtResource("3_8wknq")
@@ -38,6 +40,14 @@ region = Rect2(96, 97, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wcng"]
 atlas = ExtResource("4_7fnha")
 region = Rect2(3, 129, 11, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44a4f"]
+atlas = ExtResource("5_8ai86")
+region = Rect2(114, 227, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjyq3"]
+atlas = ExtResource("5_8ai86")
+region = Rect2(128, 224, 16, 16)
 
 [node name="PlantNote" type="Control"]
 layout_mode = 3
@@ -168,4 +178,66 @@ stretch_mode = 6
 [node name="FertilizerLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn2/Fertilizer"]
 layout_mode = 2
 text = "5/100"
+label_settings = SubResource("LabelSettings_8ai86")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PropertyColumn1" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Health" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn1/Health"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("AtlasTexture_44a4f")
+stretch_mode = 6
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn1/Health"]
+layout_mode = 2
+text = "5/100"
+label_settings = SubResource("LabelSettings_8ai86")
+
+[node name="Age" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn1/Age"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("AtlasTexture_hjyq3")
+stretch_mode = 6
+
+[node name="AgeLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn1/Age"]
+layout_mode = 2
+text = "3d"
+label_settings = SubResource("LabelSettings_8ai86")
+
+[node name="PropertyColumn2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="State" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn2"]
+layout_mode = 2
+
+[node name="StateArrowSprite" type="AnimatedSprite2D" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn2/State"]
+position = Vector2(41, 37)
+scale = Vector2(3.5, 3.5)
+sprite_frames = ExtResource("6_vrvs4")
+animation = &"green"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn2/State"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+stretch_mode = 6
+
+[node name="StateLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2/PropertyColumn2/State"]
+layout_mode = 2
+text = "+3.5"
 label_settings = SubResource("LabelSettings_8ai86")
