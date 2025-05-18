@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=28 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_ptog4"]
 [ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="4_toh6u"]
 [ext_resource type="Texture2D" uid="uid://c0brkod0kc12t" path="res://assets/arrows1.png" id="5_ptog4"]
+[ext_resource type="AudioStream" uid="uid://s5b7nbsvnjj4" path="res://audio/735168__irolan__item-pickup-chime.wav" id="7_8qc6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjdt"]
 size = Vector2(16, 16.125)
@@ -222,5 +223,18 @@ position = Vector2(-8, -34)
 scale = Vector2(0.28125, 0.28125)
 sprite_frames = SubResource("SpriteFrames_kp45f")
 animation = &"red"
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="PlaceSound" type="AudioStreamPlayer2D" parent="Sounds"]
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="Sounds"]
+
+[node name="DangerSound" type="AudioStreamPlayer2D" parent="Sounds"]
+
+[node name="CashoutSound" type="AudioStreamPlayer2D" parent="Sounds"]
+
+[node name="PlantReady" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("7_8qc6y")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
