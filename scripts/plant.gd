@@ -105,7 +105,7 @@ func _on_timer_timeout() -> void:
 	+ " ($: " + str(Util.round_with_decimals(self.worth.value, 2)) + ")")
 
 	
-	var state_transformed = self.state.value - 75.0
+	var state_transformed = (self.state.value - 75.0) * (1.0 / 20.0)
 	var state_text = str(Util.round_with_decimals(state_transformed, 2))
 	
 	if state_transformed > 0:
