@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://c1rxyxpuowjbi"]
 
 [ext_resource type="Script" uid="uid://bv18dvguaor4d" path="res://scripts/player.gd" id="1_qhqgy"]
-[ext_resource type="PackedScene" uid="uid://p1204yu64b0t" path="res://scenes/Interface.tscn" id="3_dqkch"]
+[ext_resource type="PackedScene" path="res://scenes/Interface.tscn" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cm1hyo33536q1" path="res://assets/moench2.png" id="3_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4otl"]
