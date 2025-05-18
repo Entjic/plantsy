@@ -82,6 +82,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djoho"]
+height = 38.0
 
 [node name="Pesticide" type="StaticBody2D"]
 collision_layer = 3

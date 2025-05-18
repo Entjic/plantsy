@@ -315,7 +315,6 @@ shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PickupArea"]
 position = Vector2(0, -10)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
