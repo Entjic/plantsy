@@ -156,3 +156,4 @@ animation_state = "right"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_jhsr3")
+autoplay = true
