@@ -58,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6aiq1")
 }],
-"loop": true,
+"loop": false,
 "name": &"fert_start_left",
 "speed": 3.0
 }, {
@@ -66,7 +66,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vour4")
 }],
-"loop": true,
+"loop": false,
 "name": &"fert_start_right",
 "speed": 5.0
 }, {
@@ -80,7 +80,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nfbht")
 }],
-"loop": true,
+"loop": false,
 "name": &"fert_stop_left",
 "speed": 5.0
 }, {
@@ -88,7 +88,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2vkpe")
 }],
-"loop": true,
+"loop": false,
 "name": &"fert_stop_right",
 "speed": 5.0
 }]
@@ -106,7 +106,7 @@ shape = SubResource("RectangleShape2D_k0dpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t8kjj")
-animation = &"fert_start_right"
+animation = &"fert_stop_right"
 offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]

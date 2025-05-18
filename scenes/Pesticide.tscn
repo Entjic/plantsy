@@ -1,30 +1,39 @@
-[gd_scene load_steps=9 format=3 uid="uid://w6pamfp40ick"]
+[gd_scene load_steps=14 format=3 uid="uid://w6pamfp40ick"]
 
 [ext_resource type="Script" uid="uid://bfaxkxv0q3p3i" path="res://scripts/pesticide.gd" id="1_5mp3v"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="1_hert4"]
 [ext_resource type="Texture2D" uid="uid://bg3mno7cjcis1" path="res://assets/watering-can-demo.png" id="3_b6rsf"]
+[ext_resource type="Texture2D" uid="uid://h2l0rvh8rcmj" path="res://assets/sprite1_8.png" id="4_r5rtg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mp3v"]
 size = Vector2(13, 12.5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6rsf"]
-atlas = ExtResource("1_hert4")
-region = Rect2(96, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mp3v"]
 atlas = ExtResource("1_hert4")
 region = Rect2(96, 96, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_djoho"]
+atlas = ExtResource("4_r5rtg")
+region = Rect2(96, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r87dh"]
+atlas = ExtResource("4_r5rtg")
+region = Rect2(160, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqt2s"]
+atlas = ExtResource("4_r5rtg")
+region = Rect2(160, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlm3k"]
+atlas = ExtResource("4_r5rtg")
+region = Rect2(96, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6rsf"]
+atlas = ExtResource("1_hert4")
+region = Rect2(96, 96, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5rtg"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b6rsf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5mp3v")
@@ -34,6 +43,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"exterminate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djoho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r87dh")
+}],
+"loop": false,
+"name": &"pest_start_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"pest_start_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqt2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlm3k")
+}],
+"loop": false,
+"name": &"pest_stop_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6rsf")
+}],
+"loop": false,
+"name": &"pest_stop_right",
 "speed": 5.0
 }]
 
@@ -50,7 +94,7 @@ shape = SubResource("RectangleShape2D_5mp3v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r5rtg")
-animation = &"exterminate"
+animation = &"pest_stop_right"
 offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]

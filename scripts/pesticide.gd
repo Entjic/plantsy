@@ -1,9 +1,18 @@
 extends Holdable
 
 @onready var pestecide_area: Area2D = $Area2D  # Assuming you'll add an Area2D as a child
+var pesting = false;
 
 func _ready():
 	item_type = "pesticide"
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_released("use_item") && pesting:
+		pesting = false
+		if(direction == "right"):
+			$AnimatedSprite2D.play("pest_stop_right")
+		else:
+			$AnimatedSprite2D.play("pest_stop_left")
 
 func use(_node: Node, facing_direction: Vector2) -> void:
 	var player := _node as Node2D  # Make sure we can access global_position
@@ -18,11 +27,18 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 
 			# Require player to be roughly facing the body
 			if alignment >= 0.7:
+				body.pesticide_level.value += 0.04
 				var anim_player := $AnimatedSprite2D
 				if anim_player:
-					anim_player.play("exterminate")
-				body.pesticide_level.value += 0.04
+					if(!pesting):
+						if(direction == "right"):
+							anim_player.play("pest_start_right")
+						else:
+							anim_player.play("pest_start_left")
+						pesting = true;
 				break
+
+				
 
 func stop_use():
 	$AnimatedSprite2D.stop()

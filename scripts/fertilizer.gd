@@ -28,10 +28,6 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 			# Require player to be roughly facing the body
 			if alignment >= 0.7:
 				body.fertilizer_level.value += 0.04
-				break
-				
-			# Require player to be roughly facing the body
-			if alignment >= 0.7:
 				var anim_player := $AnimatedSprite2D
 				if(!fertilizing):
 					if(direction == "right"):
@@ -39,8 +35,8 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 					else:
 						anim_player.play("fert_start_left")
 					fertilizing = true;
-				var sound_player := $SplishSplash
-				if not sound_player.playing:
-					sound_player.play()
-				body.water_level.value += 0.04
+				#var sound_player := $SplishSplash
+				#if not sound_player.playing:
+					#sound_player.play()
+				#body.water_level.value += 0.04
 				break
