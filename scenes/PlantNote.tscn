@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://b37n4lv3j45vb"]
+[gd_scene load_steps=18 format=3 uid="uid://3qdw36y5q45j"]
 
 [ext_resource type="Script" uid="uid://dydar1logsdha" path="res://scripts/plant_note.gd" id="1_nm86x"]
 [ext_resource type="Texture2D" uid="uid://cf6dp8fwb1y6w" path="res://assets/notebook.png" id="2_57p1b"]
 [ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_8wknq"]
 [ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="4_7fnha"]
 [ext_resource type="Texture2D" uid="uid://ja6lwfbxy2yw" path="res://assets/sprite1_95.png" id="5_8ai86"]
+[ext_resource type="Texture2D" uid="uid://bte4v6gxg8kgn" path="res://assets/sprite1_96.png" id="6_dwpef"]
 [ext_resource type="SpriteFrames" uid="uid://bbvr5i3yvd3si" path="res://assets/sprites/arrow.tres" id="6_vrvs4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7fnha"]
@@ -46,7 +47,7 @@ atlas = ExtResource("5_8ai86")
 region = Rect2(114, 227, 13, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjyq3"]
-atlas = ExtResource("5_8ai86")
+atlas = ExtResource("6_dwpef")
 region = Rect2(128, 224, 16, 16)
 
 [node name="PlantNote" type="Control"]
