@@ -2,9 +2,9 @@ class_name FertilizerLevel
 extends PlantProperty
 
 func _init():
-	max = 25
-	value = 10
-	optimum = 20
+	max = 100
+	value = 20
+	optimum = 40
 
 
 func progress(current: float) -> float:
