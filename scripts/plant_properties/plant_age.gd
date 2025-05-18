@@ -3,7 +3,8 @@ extends PlantProperty
 
 func _init():
 	value = 0
+	max = 24
 
 
 func progress(current: float) -> float:
-	return 0.4
+	return 0.8 * randf()

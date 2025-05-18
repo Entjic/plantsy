@@ -78,9 +78,19 @@ func _on_timer_timeout() -> void:
 	state.tick()
 	health.tick()
 	worth.tick()
+	
+	var prev_age = age.value
 	age.tick()
 	
 	setTextures()
+	
+	if prev_age < age.max and age.value == age.max:
+		$Sounds/PlantReady.play()
+		$Stars.visible = true
+		$Stars/StarOne.play()
+		$Stars/StarTwo.play()
+		$Stars/StarThree.play()
+
 	
 	# todo: reduce health if plant is unhappy
 	print(self.name
