@@ -8,11 +8,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("use_item") && watering:
-		watering = false
-		if(direction == "right"):
-			$AnimatedSprite2D.play("water_stop_right")
-		else:
-			$AnimatedSprite2D.play("water_stop_left")
+		water_stop()
 	elif !watering:
 		if(direction == "right"):
 			$AnimatedSprite2D.play("water_right")
@@ -31,20 +27,28 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 
 			# Require player to be roughly facing the body
 			if alignment >= 0.7:
-				var anim_player := $AnimatedSprite2D
 				if(!watering):
-					if(direction == "right"):
-						anim_player.play("water_start_right")
-					else:
-						anim_player.play("water_start_left")
-					watering = true;
-				var sound_player := $SplishSplash
-				if not sound_player.playing:
-					sound_player.play()
+					water_start()
 				body.water_level.value += 0.04
 				break
+			else:
+				if  watering:
+					water_stop()
 
-
-func stop_use():
-	$AnimatedSprite2D.stop()
+func water_stop():
+	watering = false
 	$SplishSplash.stop()
+	if(direction == "right"):
+		$AnimatedSprite2D.play("water_stop_right")
+	else:
+		$AnimatedSprite2D.play("water_stop_left")
+
+func water_start():
+	watering = true;
+	if not $SplishSplash.playing:
+		$SplishSplash.play()
+	if(direction == "right"):
+		$AnimatedSprite2D.play("water_start_right")
+	else:
+		$AnimatedSprite2D.play("water_start_left")
+	

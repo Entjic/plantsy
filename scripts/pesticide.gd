@@ -8,12 +8,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("use_item") && pesting:
-		pesting = false
-		$Pssshht.stop()
-		if(direction == "right"):
-			$AnimatedSprite2D.play("pest_stop_right")
-		else:
-			$AnimatedSprite2D.play("pest_stop_left")
+		pest_stop()
 	elif !pesting:
 		if(direction == "right"):
 			$AnimatedSprite2D.play("pest_right")
@@ -34,19 +29,26 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 			# Require player to be roughly facing the body
 			if alignment >= 0.7:
 				body.pesticide_level.value += 0.04
-				var anim_player := $AnimatedSprite2D
-				if anim_player:
-					if(!pesting):
-						if(direction == "right"):
-							anim_player.play("pest_start_right")
-						else:
-							anim_player.play("pest_start_left")
-						pesting = true;
-						$Pssshht.play()
+				if(!pesting):
+					pest_start()
 				break
+			else:
+				if  pesting:
+					pest_stop()
 
-
-
-func stop_use():
-	$AnimatedSprite2D.stop()
+func pest_stop():
+	pesting = false
 	$Pssshht.stop()
+	if(direction == "right"):
+		$AnimatedSprite2D.play("pest_stop_right")
+	else:
+		$AnimatedSprite2D.play("pest_stop_left")
+
+func pest_start():
+	pesting = true;
+	$Pssshht.play()
+	if(direction == "right"):
+		$AnimatedSprite2D.play("pest_start_right")
+	else:
+		$AnimatedSprite2D.play("pest_start_left")
+	
