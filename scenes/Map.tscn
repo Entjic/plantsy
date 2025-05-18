@@ -294,8 +294,7 @@ color = Color(1, 0.735294, 0.0441779, 1)
 texture = SubResource("GradientTexture2D_lajc7")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Light"]
-visible = false
-position = Vector2(23, 40)
+position = Vector2(43, -4.99999)
 scale = Vector2(12.02, 10.9575)
 texture = SubResource("GradientTexture2D_lajc7")
 
