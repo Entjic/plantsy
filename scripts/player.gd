@@ -68,9 +68,6 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("use_item") and held:
 		held.use(self, facing_direction)
 
-	if Input.is_action_just_released("use_item") and held and "stop_use" in held:
-		held.stop_use()
-
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("analyze"):
