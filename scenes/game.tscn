@@ -96,42 +96,36 @@ position = Vector2(0, -213)
 position = Vector2(-96, 104)
 itemType = "cactus"
 item = ExtResource("5_kyk2p")
-price = 2.0
 metadata/_edit_group_ = true
 
 [node name="SunflowerShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(-48, 104)
 itemType = "sunflower"
 item = ExtResource("5_kyk2p")
-price = 3.0
 metadata/_edit_group_ = true
 
 [node name="OrangeShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(0, 104)
 itemType = "orange"
 item = ExtResource("5_kyk2p")
-price = 4.0
 metadata/_edit_group_ = true
 
 [node name="PurpleShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(48, 104)
 itemType = "purple"
 item = ExtResource("5_kyk2p")
-price = 5.0
 metadata/_edit_group_ = true
 
 [node name="RedShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(96, 104)
 itemType = "red"
 item = ExtResource("5_kyk2p")
-price = 6.0
 metadata/_edit_group_ = true
 
 [node name="RoseShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(144, 104)
 itemType = "rose"
 item = ExtResource("5_kyk2p")
-price = 7.0
 metadata/_edit_group_ = true
 
 [node name="DeliveryLocation" parent="Shops" instance=ExtResource("11_ocgqw")]

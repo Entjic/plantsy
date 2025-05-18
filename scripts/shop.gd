@@ -7,6 +7,7 @@ extends StaticBody2D
 @onready var shopTexture = $shopTexture;
 
 func _ready():
+	price = randi() % 7
 	setTexture()
 
 func setTexture():
