@@ -9,4 +9,4 @@ func _init(state: PlantState):
 
 
 func progress(current: float) -> float:
-	return (self.state.value - 75.0) * (1.0 / 20.0);
+	return (self.state.value - 75.0) * (1.0 / 40.0);
