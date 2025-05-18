@@ -24,7 +24,8 @@ func setTexture():
 		$shopTexture.play("sunflower")
 
 func reciveItem() -> Holdable:
-	print(itemType + " gekauft")
+	get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message(itemType + " received")
+
 	if item:
 		var new_item = item.instantiate() as Holdable
 		new_item.type = itemType

@@ -9,7 +9,7 @@ const SPEED = 60.0
 
 var held: Holdable = null
 
-var bank: Bank = Bank.new()
+@onready var bank: Bank = Bank.new(get_tree())
 
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing
 
@@ -126,11 +126,11 @@ func drop(body: Node):
 		self.held = null
 		return
 	else:
-		print("Wrong slot for this item.")
+		get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Wrong slot for this item.")
 	
 func buy(shop: Node):
 	if held:
-		print("you are already holding item :(")
+		get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Empty your hands")
 		return
 
 	if bank.pay(shop.price):
