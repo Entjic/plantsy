@@ -35,6 +35,7 @@ func pick_up(player: Node):
 	if (slot):
 		slot.held = null
 	slot = null
+	picked()
 
 func drop(player: Node, facing_direction: Vector2, target: HoldableSlot):
 	print("Trying to drop node " + self.name)
@@ -52,9 +53,16 @@ func drop(player: Node, facing_direction: Vector2, target: HoldableSlot):
 	self.collision_layer = self.carried_layer
 	self.collision_mask = self.carried_mask
 	self.slot = target
+	dropped()
 
 func use(_node: Node, facing_direction: Vector2) -> void:
 	pass
 	
 func stop_use() -> void:
+	pass
+	
+func picked() -> void:
+	pass
+
+func dropped() -> void:
 	pass

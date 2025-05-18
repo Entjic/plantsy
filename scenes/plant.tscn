@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=32 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="4_toh6u"]
 [ext_resource type="SpriteFrames" uid="uid://bbvr5i3yvd3si" path="res://assets/sprites/arrow.tres" id="7_2riao"]
 [ext_resource type="AudioStream" uid="uid://s5b7nbsvnjj4" path="res://audio/735168__irolan__item-pickup-chime.wav" id="7_8qc6y"]
+[ext_resource type="AudioStream" uid="uid://d35g82sw36mkd" path="res://audio/790254__leventech__heavy-thud.mp3" id="8_68tkh"]
 [ext_resource type="Texture2D" uid="uid://dvktk41e48v3a" path="res://assets/sprite1_94.png" id="9_2riao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjdt"]
@@ -237,6 +238,7 @@ animation = &"green"
 [node name="Sounds" type="Node2D" parent="."]
 
 [node name="PlaceSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_68tkh")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="Sounds"]
 

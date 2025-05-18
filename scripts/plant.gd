@@ -159,3 +159,9 @@ func unset_note_function():
 	
 func update_note():
 	self.note_function.call()
+
+func picked() -> void:
+	$Sounds/PickupSound.play()
+
+func dropped() -> void:
+	$Sounds/PlaceSound.play()
