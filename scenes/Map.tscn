@@ -286,6 +286,7 @@ tile_map_data = PackedByteArray("AADR/wMAAwADAAAAAADS/wQAAwADAAAAAADP/wQAAwADAAA
 tile_set = ExtResource("1_5hauk")
 
 [node name="Light" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Light"]
 position = Vector2(-792, -40)

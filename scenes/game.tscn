@@ -129,6 +129,7 @@ metadata/_edit_group_ = true
 position = Vector2(190, 121)
 
 [node name="ToolSlots" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="SlotTool" parent="ToolSlots" instance=ExtResource("12_jbgew")]
 position = Vector2(-170, -38)
