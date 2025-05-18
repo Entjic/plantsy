@@ -37,6 +37,7 @@ func update_plant():
 	
 	health_label.text = format_level_2(plant.health)
 	money_label.text = "$%0.2f" % plant.worth.value
+	age_label.text = "%0.2f days" % plant.age.value
 	
 	var state_transformed = (plant.state.value - 75.0) * (1.0 / 20.0)
 	var state_text = str(Util.round_with_decimals(state_transformed, 2))

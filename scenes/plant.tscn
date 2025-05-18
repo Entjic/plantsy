@@ -182,14 +182,15 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_odjdt")
 
 [node name="PlantPot" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_toh6u")
 animation = &"pink"
+offset = Vector2(0, -8)
 
 [node name="PlantTexture" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_ddi4x")
 animation = &"dead"
+offset = Vector2(0, -15)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
