@@ -11,7 +11,14 @@ extends Control
 
 @onready var background = $Background
 
+var plant: Plant
+
 func show_note(plant: Plant):
+	self.plant = plant
+	update_plant()
+	self.plant.set_note_function(update_plant)
+	
+func update_plant():
 	if plant == null:
 		hide()
 		return
@@ -27,6 +34,8 @@ func show_note(plant: Plant):
 	show()
 
 func hide_note():
+	if plant:
+		plant.unset_note_function()
 	hide()
 
 func format_level(level):

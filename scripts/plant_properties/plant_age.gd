@@ -7,4 +7,4 @@ func _init():
 
 
 func progress(current: float) -> float:
-	return 0.8 * randf()
+	return 0.2 * randf()

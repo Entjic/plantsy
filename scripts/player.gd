@@ -74,7 +74,7 @@ func _physics_process(_delta: float) -> void:
 		
 		var note_ui = get_tree().get_root().get_node("Game/CanvasLayer/PlantNote")
 		if note_ui.visible:
-			note_ui.hide()
+			note_ui.hide_note()
 		else: 
 			for body in pickup_area.get_overlapping_bodies():
 				if body is not Holdable or body.item_type != "plant":
@@ -107,7 +107,8 @@ func drop(body: Node):
 	if slot.can_accept(held, facing_direction, self):
 		if slot is DeliveryLocation and self.held is Plant: 
 			var plnt: Plant = self.held
-			if (plnt.age.value < 24):
+			if plnt.age.value != plnt.age.max:
+				get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Plant is not yet fully grown. Try selling it later!")
 				return
 			
 		print("Can place " + held.name + " on slot")
@@ -118,7 +119,7 @@ func drop(body: Node):
 		if slot is DeliveryLocation and self.held is Plant: 
 			var dl: DeliveryLocation = slot
 			var plnt: Plant = self.held
-			if plnt.age.value >= 24:
+			if plnt.age.value == plnt.age.max:
 				dl.pay(bank, plnt)
 			return
 		
