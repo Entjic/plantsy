@@ -60,6 +60,7 @@ shape = SubResource("RectangleShape2D_k0dpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t8kjj")
+animation = &"fertilize"
 offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -7,7 +7,7 @@ func _ready():
 	item_type = "watering_can"
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_released("use_item"):
+	if Input.is_action_just_released("use_item") && watering:
 		watering = false
 		$AnimatedSprite2D.play("water_stop")
 
