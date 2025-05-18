@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" path="res://scenes/PlantNote.tscn" id="3_trtic"]
+[ext_resource type="PackedScene" uid="uid://b37n4lv3j45vb" path="res://scenes/PlantNote.tscn" id="3_trtic"]
 [ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://w6pamfp40ick" path="res://scenes/Pesticide.tscn" id="10_dinhu"]
