@@ -1,156 +1,156 @@
 [gd_scene load_steps=15 format=3 uid="uid://if0gcs8qoahl"]
 
-[ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_iywne"]
-[ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_p57ef"]
-[ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://b37n4lv3j45vb" path="res://scenes/PlantNote.tscn" id="3_trtic"]
-[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="5_p57ef"]
-[ext_resource type="PackedScene" uid="uid://w6pamfp40ick" path="res://scenes/Pesticide.tscn" id="10_dinhu"]
-[ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="11_dinhu"]
-[ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="11_kvpfn"]
-[ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
-[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="13_fjien"]
-[ext_resource type="PackedScene" uid="uid://dm6nhpwocylrk" path="res://scenes/DeliveryLocation.tscn" id="14_trtic"]
+[ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_7ua8r"]
+[ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_r7sob"]
+[ext_resource type="PackedScene" uid="uid://b37n4lv3j45vb" path="res://scenes/PlantNote.tscn" id="3_y5y3l"]
+[ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="4_vjgi4"]
+[ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="5_kyk2p"]
+[ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="6_45i86"]
+[ext_resource type="PackedScene" uid="uid://w6pamfp40ick" path="res://scenes/Pesticide.tscn" id="7_sv1m6"]
+[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="8_a8wo8"]
+[ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="9_attvq"]
+[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="10_bneo8"]
+[ext_resource type="PackedScene" uid="uid://dm6nhpwocylrk" path="res://scenes/DeliveryLocation.tscn" id="11_ocgqw"]
+[ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="12_jbgew"]
+[ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="13_a85ww"]
+[ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="14_jhsr3"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_iywne")
+script = ExtResource("1_7ua8r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_p57ef")]
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_r7sob")]
 offset_left = 296.0
 offset_top = 43.0
 offset_right = 444.0
 offset_bottom = 191.0
 
-[node name="PlantNote" parent="CanvasLayer" instance=ExtResource("3_trtic")]
+[node name="PlantNote" parent="CanvasLayer" instance=ExtResource("3_y5y3l")]
 visible = false
 
-[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+[node name="Player" parent="." instance=ExtResource("4_vjgi4")]
 position = Vector2(-1, -2)
 
 [node name="Plants" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-385, -355)
 
-[node name="Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
+[node name="Plant" parent="Plants" instance=ExtResource("5_kyk2p")]
 position = Vector2(559, 355)
 
-[node name="Plant2" parent="Plants" instance=ExtResource("1_uwrxv")]
+[node name="Plant2" parent="Plants" instance=ExtResource("5_kyk2p")]
 position = Vector2(593, 353)
 
 [node name="Tools" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Fertilizer" parent="Tools" instance=ExtResource("11_dinhu")]
+[node name="Fertilizer" parent="Tools" instance=ExtResource("6_45i86")]
 position = Vector2(-150, -2)
 
-[node name="Pesticide" parent="Tools" instance=ExtResource("10_dinhu")]
+[node name="Pesticide" parent="Tools" instance=ExtResource("7_sv1m6")]
 position = Vector2(-174, -5)
 
-[node name="WateringCan" parent="Tools" instance=ExtResource("4_lbhrr")]
+[node name="WateringCan" parent="Tools" instance=ExtResource("8_a8wo8")]
 position = Vector2(-126, -1)
 
 [node name="PlantSlots" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="SlotPlant" parent="PlantSlots" instance=ExtResource("5_p57ef")]
+[node name="SlotPlant" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(-90, 48)
 
-[node name="SlotPlant2" parent="PlantSlots" instance=ExtResource("5_p57ef")]
+[node name="SlotPlant2" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(-42, 48)
 
-[node name="SlotPlant3" parent="PlantSlots" instance=ExtResource("5_p57ef")]
+[node name="SlotPlant3" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(6, 48)
 
-[node name="SlotPlant4" parent="PlantSlots" instance=ExtResource("5_p57ef")]
+[node name="SlotPlant4" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(54, 48)
 
-[node name="SlotPlant5" parent="PlantSlots" instance=ExtResource("5_p57ef")]
+[node name="SlotPlant5" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(102, 48)
 
-[node name="SlotPlant6" parent="PlantSlots" instance=ExtResource("5_p57ef")]
+[node name="SlotPlant6" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(150, 48)
 
-[node name="SlotPlant7" parent="PlantSlots" instance=ExtResource("5_p57ef")]
+[node name="SlotPlant7" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(198, 48)
 
 [node name="Shops" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -213)
 
-[node name="CactusShop" parent="Shops" instance=ExtResource("13_fjien")]
+[node name="CactusShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(-96, 104)
 itemType = "cactus"
-item = ExtResource("1_uwrxv")
+item = ExtResource("5_kyk2p")
 price = 10.0
 metadata/_edit_group_ = true
 
-[node name="SunflowerShop" parent="Shops" instance=ExtResource("13_fjien")]
+[node name="SunflowerShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(-48, 104)
 itemType = "sunflower"
-item = ExtResource("1_uwrxv")
+item = ExtResource("5_kyk2p")
 price = 20.0
 metadata/_edit_group_ = true
 
-[node name="OrangeShop" parent="Shops" instance=ExtResource("13_fjien")]
+[node name="OrangeShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(0, 104)
 itemType = "orange"
-item = ExtResource("1_uwrxv")
+item = ExtResource("5_kyk2p")
 price = 15.0
 metadata/_edit_group_ = true
 
-[node name="PurpleShop" parent="Shops" instance=ExtResource("13_fjien")]
+[node name="PurpleShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(48, 104)
 itemType = "purple"
-item = ExtResource("1_uwrxv")
+item = ExtResource("5_kyk2p")
 price = 20.0
 metadata/_edit_group_ = true
 
-[node name="RedShop" parent="Shops" instance=ExtResource("13_fjien")]
+[node name="RedShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(96, 104)
 itemType = "red"
-item = ExtResource("1_uwrxv")
+item = ExtResource("5_kyk2p")
 price = 20.0
 metadata/_edit_group_ = true
 
-[node name="RoseShop" parent="Shops" instance=ExtResource("13_fjien")]
+[node name="RoseShop" parent="Shops" instance=ExtResource("10_bneo8")]
 position = Vector2(144, 104)
 itemType = "rose"
-item = ExtResource("1_uwrxv")
+item = ExtResource("5_kyk2p")
 price = 30.0
 metadata/_edit_group_ = true
 
-[node name="DeliveryLocation" parent="Shops" instance=ExtResource("14_trtic")]
+[node name="DeliveryLocation" parent="Shops" instance=ExtResource("11_ocgqw")]
 position = Vector2(190, 121)
 
 [node name="ToolSlots" type="Node2D" parent="."]
 
-[node name="SlotTool" parent="ToolSlots" instance=ExtResource("11_kvpfn")]
+[node name="SlotTool" parent="ToolSlots" instance=ExtResource("12_jbgew")]
 position = Vector2(-170, -38)
 animation_state = "left1"
 
-[node name="SlotTool2" parent="ToolSlots" instance=ExtResource("11_kvpfn")]
+[node name="SlotTool2" parent="ToolSlots" instance=ExtResource("12_jbgew")]
 position = Vector2(-154, -38)
 animation_state = "left2"
 
-[node name="SlotTool3" parent="ToolSlots" instance=ExtResource("11_kvpfn")]
+[node name="SlotTool3" parent="ToolSlots" instance=ExtResource("12_jbgew")]
 position = Vector2(-138, -38)
 animation_state = "middle"
 
-[node name="SlotTool4" parent="ToolSlots" instance=ExtResource("11_kvpfn")]
+[node name="SlotTool4" parent="ToolSlots" instance=ExtResource("12_jbgew")]
 position = Vector2(-122, -38)
 animation_state = "middle"
 
-[node name="SlotTool5" parent="ToolSlots" instance=ExtResource("11_kvpfn")]
+[node name="SlotTool5" parent="ToolSlots" instance=ExtResource("12_jbgew")]
 position = Vector2(-106, -38)
 animation_state = "right"
 
-[node name="Map" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Map" parent="." instance=ExtResource("13_a85ww")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_dinhu")
+stream = ExtResource("14_jhsr3")
