@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://h2l0rvh8rcmj" path="res://assets/sprite1_8.png" id="3_lo4gl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0dpr"]
-size = Vector2(13, 12.5)
+size = Vector2(14, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0dpr"]
 atlas = ExtResource("2_k0dpr")
@@ -138,17 +138,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0dpr"]
-height = 38.0
 
 [node name="WateringCan" type="StaticBody2D"]
 collision_layer = 3
 script = ExtResource("1_k0dpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -15.5)
 shape = SubResource("RectangleShape2D_k0dpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_t8kjj")
 animation = &"water_right"
 autoplay = "idle"
@@ -158,7 +158,7 @@ offset = Vector2(0, -8)
 position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 6)
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_k0dpr")
 
 [node name="SplishSplash" type="AudioStreamPlayer" parent="."]

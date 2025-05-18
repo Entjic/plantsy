@@ -28,4 +28,4 @@ func can_accept(holdable: Holdable, facing_direction: Vector2, player: Node) -> 
 	return true
 
 func center(holdable: Holdable) -> void:
-	holdable.global_position = global_position
+	holdable.global_position = global_position + Vector2(0.0, 1.0)

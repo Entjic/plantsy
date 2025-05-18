@@ -47,16 +47,17 @@ position = Vector2(593, 353)
 y_sort_enabled = true
 
 [node name="Fertilizer" parent="Tools" instance=ExtResource("6_45i86")]
-position = Vector2(-150, -2)
+position = Vector2(-138, -38)
 
 [node name="Pesticide" parent="Tools" instance=ExtResource("7_sv1m6")]
-position = Vector2(-174, -5)
+position = Vector2(-170, -38)
 
 [node name="WateringCan" parent="Tools" instance=ExtResource("8_a8wo8")]
-position = Vector2(-126, -1)
+position = Vector2(-122, -38)
 
 [node name="PlantSlots" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(2, -16)
 
 [node name="SlotPlant" parent="PlantSlots" instance=ExtResource("9_attvq")]
 position = Vector2(-90, 48)
@@ -126,29 +127,29 @@ price = 30.0
 metadata/_edit_group_ = true
 
 [node name="DeliveryLocation" parent="Shops" instance=ExtResource("11_ocgqw")]
-position = Vector2(190, 121)
+position = Vector2(217, 115)
 
 [node name="ToolSlots" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="SlotTool" parent="ToolSlots" instance=ExtResource("12_jbgew")]
-position = Vector2(-170, -38)
+position = Vector2(-170, -39)
 animation_state = "left1"
 
 [node name="SlotTool2" parent="ToolSlots" instance=ExtResource("12_jbgew")]
-position = Vector2(-154, -38)
+position = Vector2(-154, -39)
 animation_state = "left2"
 
 [node name="SlotTool3" parent="ToolSlots" instance=ExtResource("12_jbgew")]
-position = Vector2(-138, -38)
+position = Vector2(-138, -39)
 animation_state = "middle"
 
 [node name="SlotTool4" parent="ToolSlots" instance=ExtResource("12_jbgew")]
-position = Vector2(-122, -38)
+position = Vector2(-122, -39)
 animation_state = "middle"
 
 [node name="SlotTool5" parent="ToolSlots" instance=ExtResource("12_jbgew")]
-position = Vector2(-106, -38)
+position = Vector2(-106, -39)
 animation_state = "right"
 
 [node name="Map" parent="." instance=ExtResource("13_a85ww")]
