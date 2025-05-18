@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://djbdiqclymmlu"]
 
 [ext_resource type="TileSet" uid="uid://4kuc7bcw7n22" path="res://tile_sets/Set1.tres" id="1_5hauk"]
-[ext_resource type="Texture2D" uid="uid://ja6lwfbxy2yw" path="res://assets/sprite1_95.png" id="1_xkm8s"]
+[ext_resource type="Texture2D" uid="uid://bte4v6gxg8kgn" path="res://assets/sprite1_96.png" id="1_xkm8s"]
 [ext_resource type="Texture2D" uid="uid://bvun3mck51t5d" path="res://assets/sprite2_1.png" id="2_xkm8s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkm8s"]
@@ -240,6 +240,11 @@ texture = ExtResource("1_xkm8s")
 7:13/0/y_sort_origin = -8
 8:13/0 = 0
 8:13/0/y_sort_origin = -8
+9:13/animation_columns = 2
+9:13/animation_speed = 2.0
+9:13/animation_mode = 1
+9:13/animation_frame_0/duration = 1.0
+9:13/animation_frame_1/duration = 1.0
 9:13/0 = 0
 9:13/0/y_sort_origin = 8
 0:14/0 = 0
@@ -302,7 +307,7 @@ tile_set = SubResource("TileSet_tm3qm")
 
 [node name="WindowLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD7//X/AQAGAAIAAAD+//X/AQAGAAIAAAAIAPX/AQAGAAIAAAAKAPX/AQAGAAIAAAD5/wEAAQAAAA4AAAAOAAEAAQABAA4AAAD2//r/AQADAA4AAADz//7/AQAJAA0AAAAOAPr/AQABAA4AAAADAPb/AQADAA4AAAA=")
+tile_map_data = PackedByteArray("AAD7//X/AQAGAAIAAAD+//X/AQAGAAIAAAAIAPX/AQAGAAIAAAAKAPX/AQAGAAIAAAD5/wEAAQAJAA0AAAAOAAEAAQABAA4AAAD2//r/AQADAA4AAADz//7/AQAJAA0AAAAOAPr/AQABAA4AAAADAPb/AQADAA4AAAA=")
 tile_set = SubResource("TileSet_tm3qm")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
