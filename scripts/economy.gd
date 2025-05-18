@@ -3,18 +3,24 @@ extends Node
 class_name Bank
 
 var balance = 0
+var tree
+
+func _init(_tree: SceneTree) -> void:
+	balance = 10
+	tree = _tree
 
 func give(amount: float):
 	if amount < 0:
+		tree.get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Received " + str(amount))
 		return
-	print("Recived " + str(amount))
+	tree.get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Recived " + str(amount))
 	balance += amount
 
 func pay(amount: float):
 	if amount > 0 && balance >= amount:
-		print("Paid " + str(amount))
+		tree.get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Paid " + str(amount))
 		balance -= amount
 		return true;
 	else:
-		print("Not enough balance :(");
+		tree.get_root().get_node("Game/CanvasLayer/MessageQueue").show_message(str(amount-balance) + " balance missing" )
 		return false;

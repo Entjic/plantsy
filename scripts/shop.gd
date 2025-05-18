@@ -7,8 +7,12 @@ extends StaticBody2D
 @onready var shopTexture = $shopTexture;
 
 func _ready():
-	price = 10.0
+	price = randi_range(1, 6)
+	$InspectionInfo/Label.text = "Price: " + str(price)
 	setTexture()
+
+func _process(delta: float) -> void:
+	update_show_info()
 
 func setTexture():
 	if(itemType == "cactus"):
@@ -25,7 +29,8 @@ func setTexture():
 		$shopTexture.play("sunflower")
 
 func reciveItem() -> Holdable:
-	print(itemType + " gekauft")
+	get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message(itemType + " received")
+
 	if item:
 		var new_item = item.instantiate() as Holdable
 		new_item.type = itemType
@@ -34,3 +39,10 @@ func reciveItem() -> Holdable:
 	else:
 		print("Fehler: Kein Item definiert")
 		return null
+
+func update_show_info():
+	for body in $InspectionArea.get_overlapping_bodies():
+		if body is CharacterBody2D:
+			$InspectionInfo.visible = true
+			return
+	$InspectionInfo.visible = false

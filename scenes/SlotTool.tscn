@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://c531rc3372r2q"]
+
+[ext_resource type="Script" uid="uid://cypo03atwys6h" path="res://scripts/slot_tool.gd" id="1_8a0e2"]
+[ext_resource type="Texture2D" uid="uid://b6btehxkr27d0" path="res://assets/sprite_workbench.png" id="2_8a0e2"]
+[ext_resource type="Texture2D" uid="uid://bvun3mck51t5d" path="res://assets/sprite2_1.png" id="3_oy50a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a0e2"]
+size = Vector2(16, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy50a"]
+atlas = ExtResource("2_8a0e2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax0sl"]
+atlas = ExtResource("3_oy50a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu5r1"]
+atlas = ExtResource("3_oy50a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1um7"]
+atlas = ExtResource("3_oy50a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oy50a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy50a")
+}],
+"loop": true,
+"name": &"left1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax0sl")
+}],
+"loop": true,
+"name": &"left2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu5r1")
+}],
+"loop": true,
+"name": &"middle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1um7")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="SlotTool" type="StaticBody2D"]
+collision_layer = 3
+script = ExtResource("1_8a0e2")
+accepted_holdables = Array[String](["fertilizer", "pesticide", "watering_can"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_8a0e2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_oy50a")
+animation = &"left1"
+offset = Vector2(0, -7)

@@ -2,6 +2,7 @@ extends Node2D
 class_name Holdable
 
 var item_type: String = ""
+var direction: String = ""
 
 var carried_layer := 0
 var carried_mask := 0
@@ -31,7 +32,10 @@ func pick_up(player: Node):
 	self.set_physics_process(false)
 	self.collision_layer = 0
 	self.collision_mask = 0
+	if (slot):
+		slot.held = null
 	slot = null
+	picked()
 
 func drop(player: Node, facing_direction: Vector2, target: HoldableSlot):
 	print("Trying to drop node " + self.name)
@@ -49,9 +53,16 @@ func drop(player: Node, facing_direction: Vector2, target: HoldableSlot):
 	self.collision_layer = self.carried_layer
 	self.collision_mask = self.carried_mask
 	self.slot = target
+	dropped()
 
 func use(_node: Node, facing_direction: Vector2) -> void:
 	pass
 	
 func stop_use() -> void:
+	pass
+	
+func picked() -> void:
+	pass
+
+func dropped() -> void:
 	pass

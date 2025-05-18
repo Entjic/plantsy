@@ -1,26 +1,64 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1pkf4sqi5ste"]
+[gd_scene load_steps=21 format=3 uid="uid://d1pkf4sqi5ste"]
 
 [ext_resource type="Script" uid="uid://tw81mii6ww1r" path="res://scripts/watering_can.gd" id="1_k0dpr"]
 [ext_resource type="Texture2D" uid="uid://ct0u1rbwcri3u" path="res://assets/sprite1_4.png" id="2_k0dpr"]
+[ext_resource type="AudioStream" uid="uid://bsd41h2te4gfb" path="res://audio/532890__bricklover__watering-with-a-watering-can.mp3" id="3_1ijl4"]
+[ext_resource type="Texture2D" uid="uid://h2l0rvh8rcmj" path="res://assets/sprite1_8.png" id="3_lo4gl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0dpr"]
-size = Vector2(13, 12.5)
+size = Vector2(14, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0dpr"]
 atlas = ExtResource("2_k0dpr")
 region = Rect2(48, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8kjj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq4rn"]
+atlas = ExtResource("3_lo4gl")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6djl6"]
+atlas = ExtResource("3_lo4gl")
+region = Rect2(0, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ijl4"]
 atlas = ExtResource("2_k0dpr")
 region = Rect2(48, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fktxn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo4gl"]
 atlas = ExtResource("2_k0dpr")
 region = Rect2(32, 96, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tum53"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4f61"]
 atlas = ExtResource("2_k0dpr")
 region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vcig"]
+atlas = ExtResource("3_lo4gl")
+region = Rect2(0, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixoyh"]
+atlas = ExtResource("3_lo4gl")
+region = Rect2(16, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcyy6"]
+atlas = ExtResource("3_lo4gl")
+region = Rect2(32, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkp6"]
+atlas = ExtResource("2_k0dpr")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvdwe"]
+atlas = ExtResource("2_k0dpr")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmcpb"]
+atlas = ExtResource("3_lo4gl")
+region = Rect2(16, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ydmi"]
+atlas = ExtResource("3_lo4gl")
+region = Rect2(0, 208, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8kjj"]
 animations = [{
@@ -34,22 +72,68 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t8kjj")
+"texture": SubResource("AtlasTexture_xq4rn")
+}],
+"loop": true,
+"name": &"water_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6djl6")
+}],
+"loop": true,
+"name": &"water_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ijl4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fktxn")
+"texture": SubResource("AtlasTexture_lo4gl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tum53")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fktxn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t8kjj")
+"texture": SubResource("AtlasTexture_j4f61")
 }],
 "loop": false,
-"name": &"water",
+"name": &"water_start_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vcig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixoyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcyy6")
+}],
+"loop": false,
+"name": &"water_start_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvdwe")
+}],
+"loop": false,
+"name": &"water_stop_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmcpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ydmi")
+}],
+"loop": false,
+"name": &"water_stop_right",
 "speed": 5.0
 }]
 
@@ -61,12 +145,13 @@ collision_layer = 3
 script = ExtResource("1_k0dpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -15.5)
 shape = SubResource("RectangleShape2D_k0dpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_t8kjj")
-animation = &"idle"
+animation = &"water_start_right"
 autoplay = "idle"
 offset = Vector2(0, -8)
 
@@ -74,5 +159,8 @@ offset = Vector2(0, -8)
 position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 6)
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_k0dpr")
+
+[node name="SplishSplash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1ijl4")

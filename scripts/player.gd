@@ -6,9 +6,10 @@ const SPEED = 60.0
 @onready var pickup_area: Area2D = $PickupArea
 @onready var ui: Control = $Camera2D/CanvasLayer/Interface
 
+
 var held: Holdable = null
 
-var bank: Bank = Bank.new()
+@onready var bank: Bank = Bank.new(get_tree())
 
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing
 
@@ -35,8 +36,8 @@ func _physics_process(_delta: float) -> void:
 		bank.give(100)
 	
 	if Input.is_action_pressed("sneak"):
-		speed_boost = 5
-		anim_speed = 5.0
+		speed_boost = 2.5
+		anim_speed = 2.5
 
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
@@ -48,8 +49,12 @@ func _physics_process(_delta: float) -> void:
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
 				anim_sprite.play("right")
+				if(held):
+					held.direction = 'right'
 			else:
 				anim_sprite.play("left")
+				if(held):
+					held.direction = 'left'
 		else:
 			if direction.y > 0:
 				anim_sprite.play("down")
@@ -63,11 +68,27 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("use_item") and held:
 		held.use(self, facing_direction)
 
-	if Input.is_action_just_released("use_item") and held and "stop_use" in held:
-		held.stop_use()
-
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("analyze"):
+		
+		var note_ui = get_tree().get_root().get_node("Game/CanvasLayer/PlantNote")
+		if note_ui.visible:
+			note_ui.hide_note()
+		else: 
+			for body in pickup_area.get_overlapping_bodies():
+				if body is not Holdable or body.item_type != "plant":
+					continue
+				
+				var to_body: Vector2 = (body.global_position - self.global_position).normalized()
+				var facing: Vector2 = facing_direction.normalized()
+				var alignment := facing.dot(to_body)
 
+				# Require player to be roughly facing the body
+				if alignment >= 0.7:
+					print("found match")
+					note_ui.show_note(body)
+			
 	if Input.is_action_just_pressed("interact"):
 		for body in pickup_area.get_overlapping_bodies():
 			if body is Holdable and held == null:
@@ -84,18 +105,32 @@ func pickup(body: Node):
 func drop(body: Node):
 	var slot: HoldableSlot = body
 	if slot.can_accept(held, facing_direction, self):
+		if slot is DeliveryLocation and self.held is Plant: 
+			var plnt: Plant = self.held
+			if plnt.age.value != plnt.age.max:
+				get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Plant is not yet fully grown. Try selling it later!")
+				return
+			
 		print("Can place " + held.name + " on slot")
 		held.drop(self, facing_direction, slot)
 		slot.center(held)
-		slot.held = held
-		held = null
+		slot.held = self.held
+		
+		if slot is DeliveryLocation and self.held is Plant: 
+			var dl: DeliveryLocation = slot
+			var plnt: Plant = self.held
+			if plnt.age.value == plnt.age.max:
+				dl.pay(bank, plnt)
+			return
+		
+		self.held = null
 		return
 	else:
-		print("Wrong slot for this item.")
+		get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Wrong slot for this item.")
 	
 func buy(shop: Node):
 	if held:
-		print("you are already holding item :(")
+		get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Empty your hands")
 		return
 
 	if bank.pay(shop.price):
