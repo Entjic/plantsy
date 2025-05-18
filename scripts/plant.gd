@@ -1,10 +1,10 @@
 class_name Plant
 extends Holdable
 
-var water_level: WaterLevel = WaterLevel.new()
-var fertilizer_level: FertilizerLevel = FertilizerLevel.new()
-var pesticide_level: PestecideLevel = PestecideLevel.new()
-var state: PlantState = PlantState.new([self.water_level, self.fertilizer_level])
+var water_level: WaterLevel = WaterLevel.new(randf_range(40, 50), randf_range(20, 50))
+var fertilizer_level: FertilizerLevel = FertilizerLevel.new(randf_range(30, 40), randf_range(10, 40))
+var pesticide_level: PestecideLevel = PestecideLevel.new(randf_range(50, 60), randf_range(30, 70))
+var state: PlantState = PlantState.new([self.water_level, self.fertilizer_level, self.fertilizer_level])
 var health: PlantHealth = PlantHealth.new(self.state)
 var worth: PlantWorth = PlantWorth.new(self.health)
 var age: PlantAge = PlantAge.new()
