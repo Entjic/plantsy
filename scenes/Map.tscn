@@ -294,6 +294,7 @@ color = Color(1, 0.735294, 0.0441779, 1)
 texture = SubResource("GradientTexture2D_lajc7")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Light"]
+visible = false
 position = Vector2(23, 40)
 scale = Vector2(12.02, 10.9575)
 texture = SubResource("GradientTexture2D_lajc7")
@@ -314,7 +315,7 @@ texture = SubResource("GradientTexture2D_lajc7")
 visible = false
 position = Vector2(-447, -312)
 rotation = 0.00174533
-color = Color(0.577008, 0.577008, 0.577008, 1)
+color = Color(0.903598, 0.903598, 0.903598, 1)
 shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Light"]
