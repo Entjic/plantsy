@@ -1,28 +1,171 @@
-[gd_scene load_steps=2 format=3 uid="uid://b37n4lv3j45vb"]
+[gd_scene load_steps=13 format=3 uid="uid://b37n4lv3j45vb"]
 
 [ext_resource type="Script" uid="uid://dydar1logsdha" path="res://scripts/plant_note.gd" id="1_nm86x"]
+[ext_resource type="Texture2D" uid="uid://cf6dp8fwb1y6w" path="res://assets/notebook.png" id="2_57p1b"]
+[ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_8wknq"]
+[ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="4_7fnha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7fnha"]
+font = ExtResource("3_8wknq")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8wknq"]
+font = ExtResource("3_8wknq")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vdw5"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vdw5"]
+atlas = ExtResource("4_7fnha")
+region = Rect2(81, 97, 15, 15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ai86"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrvs4"]
+atlas = ExtResource("4_7fnha")
+region = Rect2(16, 127, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwpef"]
+atlas = ExtResource("4_7fnha")
+region = Rect2(96, 97, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wcng"]
+atlas = ExtResource("4_7fnha")
+region = Rect2(3, 129, 11, 13)
 
 [node name="PlantNote" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("1_nm86x")
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -1437.0
+offset_right = 1071.0
+offset_bottom = 719.0
+grow_vertical = 2
+texture = ExtResource("2_57p1b")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 204.0
+offset_top = -928.0
+offset_right = 840.0
+offset_bottom = -3.0
 
 [node name="NameLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+offset_left = 8.0
+offset_top = 36.0
+offset_right = 412.0
+offset_bottom = 68.0
+text = "Pflanzli"
+label_settings = SubResource("LabelSettings_7fnha")
+
+[node name="TypeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 180.0
+offset_right = 469.0
+offset_bottom = 204.0
+text = "Typ: Marmeladenbaum"
+label_settings = SubResource("LabelSettings_8wknq")
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+offset_left = -1.0
+offset_top = 164.0
+offset_right = 469.0
+offset_bottom = 512.0
+label_settings = SubResource("LabelSettings_1vdw5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 257.0
+offset_right = 466.0
+offset_bottom = 660.0
+
+[node name="Money" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/Money"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1vdw5")
+stretch_mode = 6
+
+[node name="MoneyLabel" type="Label" parent="VBoxContainer/VBoxContainer/Money"]
+layout_mode = 2
+text = "$10"
+label_settings = SubResource("LabelSettings_8ai86")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PropertyColumn1" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Water" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn1/Water"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("AtlasTexture_vrvs4")
+stretch_mode = 6
+
+[node name="WaterLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn1/Water"]
+layout_mode = 2
+text = "5/100"
+label_settings = SubResource("LabelSettings_8ai86")
+
+[node name="Pesticide" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn1/Pesticide"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("AtlasTexture_dwpef")
+stretch_mode = 6
+
+[node name="PesticideLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn1/Pesticide"]
+layout_mode = 2
+text = "5/100"
+label_settings = SubResource("LabelSettings_8ai86")
+
+[node name="PropertyColumn2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fertilizer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn2"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn2/Fertilizer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3wcng")
+stretch_mode = 6
+
+[node name="FertilizerLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/PropertyColumn2/Fertilizer"]
+layout_mode = 2
+text = "5/100"
+label_settings = SubResource("LabelSettings_8ai86")
