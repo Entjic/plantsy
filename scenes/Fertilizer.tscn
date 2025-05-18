@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcbrarehldn1j"]
+[gd_scene load_steps=16 format=3 uid="uid://bcbrarehldn1j"]
 
 [ext_resource type="Script" uid="uid://cvl67urdkblsw" path="res://scripts/fertilizer.gd" id="1_br11q"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="2_br11q"]
+[ext_resource type="Texture2D" uid="uid://h2l0rvh8rcmj" path="res://assets/sprite1_8.png" id="2_vour4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0dpr"]
 size = Vector2(13, 12.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vour4"]
-atlas = ExtResource("2_br11q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2agl"]
+atlas = ExtResource("2_vour4")
 region = Rect2(112, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_br11q"]
@@ -22,17 +23,32 @@ region = Rect2(144, 96, 16, 16)
 atlas = ExtResource("2_br11q")
 region = Rect2(144, 96, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vour4"]
+atlas = ExtResource("2_br11q")
+region = Rect2(112, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrpdf"]
+atlas = ExtResource("2_vour4")
+region = Rect2(144, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0am3v"]
+atlas = ExtResource("2_vour4")
+region = Rect2(128, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfbht"]
+atlas = ExtResource("2_vour4")
+region = Rect2(112, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vkpe"]
+atlas = ExtResource("2_vour4")
+region = Rect2(112, 96, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8kjj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vour4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_g2agl")
 }, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_br11q")
 }, {
@@ -43,8 +59,38 @@ animations = [{
 "texture": SubResource("AtlasTexture_6aiq1")
 }],
 "loop": true,
-"name": &"fertilize",
+"name": &"fert_start_left",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vour4")
+}],
+"loop": true,
+"name": &"fert_start_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrpdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0am3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfbht")
+}],
+"loop": true,
+"name": &"fert_stop_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vkpe")
+}],
+"loop": true,
+"name": &"fert_stop_right",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0dpr"]
@@ -60,7 +106,7 @@ shape = SubResource("RectangleShape2D_k0dpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t8kjj")
-animation = &"fertilize"
+animation = &"fert_start_right"
 offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]

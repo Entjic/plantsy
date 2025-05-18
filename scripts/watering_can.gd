@@ -9,7 +9,15 @@ func _ready():
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("use_item") && watering:
 		watering = false
-		$AnimatedSprite2D.play("water_stop")
+		if(direction == "right"):
+			$AnimatedSprite2D.play("water_stop_right")
+		else:
+			$AnimatedSprite2D.play("water_stop_left")
+	elif !watering:
+		if(direction == "right"):
+			$AnimatedSprite2D.play("water_right")
+		else:
+			$AnimatedSprite2D.play("water_left")
 
 func use(_node: Node, facing_direction: Vector2) -> void:
 	var player := _node as Node2D  # Make sure we can access global_position
@@ -21,13 +29,14 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 			var facing: Vector2 = facing_direction.normalized()
 			var alignment := facing.dot(to_body)
 
-			print(direction +" " +str(facing_direction.x))
-
 			# Require player to be roughly facing the body
 			if alignment >= 0.7:
 				var anim_player := $AnimatedSprite2D
 				if(!watering):
-					anim_player.play("water_start")
+					if(direction == "right"):
+						anim_player.play("water_start_right")
+					else:
+						anim_player.play("water_start_left")
 					watering = true;
 				var sound_player := $SplishSplash
 				if not sound_player.playing:
