@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="11_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="13_fjien"]
-[ext_resource type="PackedScene" path="res://scenes/DeliveryLocation.tscn" id="14_trtic"]
+[ext_resource type="PackedScene" uid="uid://dm6nhpwocylrk" path="res://scenes/DeliveryLocation.tscn" id="14_trtic"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -22,10 +22,10 @@ script = ExtResource("1_iywne")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_p57ef")]
-offset_left = -149.0
-offset_top = -70.0
-offset_right = -1.0
-offset_bottom = 78.0
+offset_left = 296.0
+offset_top = 43.0
+offset_right = 444.0
+offset_bottom = 191.0
 
 [node name="PlantNote" parent="CanvasLayer" instance=ExtResource("3_trtic")]
 visible = false
@@ -35,31 +35,41 @@ y_sort_enabled = true
 position = Vector2(-385, -355)
 
 [node name="Plant" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(401, 407)
+position = Vector2(559, 355)
 
 [node name="Plant2" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(485, 388)
-
-[node name="Plant3" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(350, 440)
-
-[node name="Plant4" parent="Plants" instance=ExtResource("1_uwrxv")]
-position = Vector2(448, 333)
+position = Vector2(593, 353)
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(-1, -2)
 
 [node name="Watering Can" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(-109, 20)
-
-[node name="Plot" parent="." instance=ExtResource("5_p57ef")]
-position = Vector2(185, -48)
+position = Vector2(-126, -1)
 
 [node name="SlotPlant" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(-90, 48)
+
+[node name="SlotPlant2" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(-42, 48)
+
+[node name="SlotPlant3" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(6, 48)
+
+[node name="SlotPlant4" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(54, 48)
+
+[node name="SlotPlant5" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(102, 48)
+
+[node name="SlotPlant6" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(150, 48)
+
+[node name="SlotPlant7" parent="." instance=ExtResource("5_p57ef")]
+position = Vector2(198, 48)
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-96, -272)
+position = Vector2(0, -213)
 
 [node name="CactusShop" parent="Node2D" instance=ExtResource("13_fjien")]
 position = Vector2(-96, 104)
@@ -106,28 +116,38 @@ metadata/_edit_group_ = true
 [node name="Map" parent="." instance=ExtResource("3_lnu2h")]
 
 [node name="WateringCan" parent="." instance=ExtResource("11_dinhu")]
-position = Vector2(-140, 97)
+position = Vector2(-150, -2)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_dinhu")
 
-[node name="Plant" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(37, 0)
-
 [node name="SlotTool" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(16, -101)
+position = Vector2(-170, -38)
+animation_state = "left1"
+accepted_holdables = Array[String](["fertilizer", "pesticide", "watering_can"])
 
 [node name="SlotTool2" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(34, -101)
+position = Vector2(-154, -38)
+animation_state = "left2"
+accepted_holdables = Array[String](["fertilizer", "pesticide", "watering_can"])
 
 [node name="SlotTool3" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(52, -101)
+position = Vector2(-138, -38)
+animation_state = "middle"
+accepted_holdables = Array[String](["fertilizer", "pesticide", "watering_can"])
 
 [node name="SlotTool4" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(-2, -101)
+position = Vector2(-122, -38)
+animation_state = "middle"
+accepted_holdables = Array[String](["fertilizer", "pesticide", "watering_can"])
+
+[node name="SlotTool5" parent="." instance=ExtResource("11_kvpfn")]
+position = Vector2(-106, -38)
+animation_state = "right"
+accepted_holdables = Array[String](["fertilizer", "pesticide", "watering_can"])
 
 [node name="Pesticide" parent="." instance=ExtResource("10_dinhu")]
-position = Vector2(-111, -79)
+position = Vector2(-174, -5)
 
 [node name="DeliveryLocation" parent="." instance=ExtResource("14_trtic")]
-position = Vector2(265, -32)
+position = Vector2(190, -92)
