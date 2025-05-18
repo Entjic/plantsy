@@ -1,10 +1,10 @@
 class_name PestecideLevel
 extends PlantProperty
 
-func _init():
+func _init(optimum: float, value: float):
 	max = 100
-	value = 20
-	optimum = 40
+	self.value = value
+	self.optimum = optimum
 
 
 func progress(current: float) -> float:

@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=22 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_7ua8r"]
 [ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_r7sob"]
-[ext_resource type="PackedScene" path="res://scenes/PlantNote.tscn" id="3_y5y3l"]
+[ext_resource type="PackedScene" uid="uid://b37n4lv3j45vb" path="res://scenes/PlantNote.tscn" id="3_y5y3l"]
 [ext_resource type="PackedScene" uid="uid://bqj27bxk21ymx" path="res://scenes/ErrorQueue.tscn" id="4_ir15t"]
 [ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="4_vjgi4"]
 [ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="5_kyk2p"]
@@ -15,6 +15,30 @@
 [ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="12_jbgew"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="13_a85ww"]
 [ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="14_jhsr3"]
+
+[sub_resource type="Gradient" id="Gradient_ir15t"]
+offsets = PackedFloat32Array(0, 0.571429)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ca42v"]
+gradient = SubResource("Gradient_ir15t")
+fill = 1
+fill_from = Vector2(0.509174, 0.493119)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_ca42v"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rysoc"]
+gradient = SubResource("Gradient_ca42v")
+
+[sub_resource type="Gradient" id="Gradient_rysoc"]
+offsets = PackedFloat32Array(0, 0.665584)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ssvqc"]
+gradient = SubResource("Gradient_rysoc")
+fill = 1
+fill_from = Vector2(0.511468, 0.509174)
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -46,9 +70,11 @@ y_sort_enabled = true
 position = Vector2(-385, -355)
 
 [node name="Plant" parent="Plants" instance=ExtResource("5_kyk2p")]
+visible = false
 position = Vector2(548, 347)
 
 [node name="Plant2" parent="Plants" instance=ExtResource("5_kyk2p")]
+visible = false
 position = Vector2(593, 353)
 
 [node name="Tools" type="Node2D" parent="."]
@@ -159,3 +185,87 @@ animation_state = "right"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_jhsr3")
 autoplay = true
+
+[node name="Light" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+position = Vector2(62, -31)
+scale = Vector2(5.32812, 4.05469)
+texture = SubResource("GradientTexture2D_ca42v")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Light"]
+color = Color(0.555899, 0.619775, 0.669626, 1)
+
+[node name="Windows" type="Node2D" parent="Light"]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light/Windows"]
+position = Vector2(-72, -98.9027)
+rotation = -1.5708
+scale = Vector2(0.647245, 19.548)
+energy = 1.61
+texture = SubResource("GradientTexture1D_rysoc")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Light/Windows"]
+position = Vector2(-24, -99.679)
+rotation = -1.5708
+scale = Vector2(0.644737, 19.548)
+energy = 1.61
+texture = SubResource("GradientTexture1D_rysoc")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Light/Windows"]
+position = Vector2(136, -100)
+rotation = -1.5708
+scale = Vector2(0.644737, 19.548)
+energy = 1.61
+texture = SubResource("GradientTexture1D_rysoc")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Light/Windows"]
+position = Vector2(168, -100)
+rotation = -1.5708
+scale = Vector2(0.644737, 19.548)
+energy = 1.61
+texture = SubResource("GradientTexture1D_rysoc")
+
+[node name="Torchs" type="Node2D" parent="Light"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Light/Torchs"]
+position = Vector2(-199, -23)
+scale = Vector2(2.10938, 2.10938)
+color = Color(1, 0.443137, 0, 1)
+energy = 1.46
+texture = SubResource("GradientTexture2D_ssvqc")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light/Torchs"]
+position = Vector2(-153, -89)
+scale = Vector2(2.10938, 2.10938)
+color = Color(1, 0.443137, 0, 1)
+energy = 1.46
+texture = SubResource("GradientTexture2D_ssvqc")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Light/Torchs"]
+position = Vector2(-102, 24)
+scale = Vector2(2.10938, 2.10938)
+color = Color(1, 0.443137, 0, 1)
+energy = 1.46
+texture = SubResource("GradientTexture2D_ssvqc")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Light/Torchs"]
+position = Vector2(230, 21)
+scale = Vector2(2.10938, 2.10938)
+color = Color(1, 0.443137, 0, 1)
+energy = 1.46
+texture = SubResource("GradientTexture2D_ssvqc")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Light/Torchs"]
+position = Vector2(231, -87)
+scale = Vector2(2.10938, 2.10938)
+color = Color(1, 0.443137, 0, 1)
+energy = 1.46
+texture = SubResource("GradientTexture2D_ssvqc")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Light/Torchs"]
+position = Vector2(54, -153)
+scale = Vector2(2.10938, 2.10938)
+color = Color(1, 0.443137, 0, 1)
+energy = 1.46
+texture = SubResource("GradientTexture2D_ssvqc")

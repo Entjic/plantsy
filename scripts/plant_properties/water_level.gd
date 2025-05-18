@@ -1,8 +1,9 @@
 class_name WaterLevel
 extends PlantProperty
 
-func _init():
-	value = 25.0
+func _init(optimum: float, value: float):
+	self.value = value
+	self.optimum = optimum
 
 func _ready() -> void:
 	pass
