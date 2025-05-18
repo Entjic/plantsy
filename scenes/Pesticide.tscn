@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://w6pamfp40ick"]
+[gd_scene load_steps=15 format=3 uid="uid://w6pamfp40ick"]
 
 [ext_resource type="Script" uid="uid://bfaxkxv0q3p3i" path="res://scripts/pesticide.gd" id="1_5mp3v"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="1_hert4"]
 [ext_resource type="Texture2D" uid="uid://bg3mno7cjcis1" path="res://assets/watering-can-demo.png" id="3_b6rsf"]
 [ext_resource type="Texture2D" uid="uid://h2l0rvh8rcmj" path="res://assets/sprite1_8.png" id="4_r5rtg"]
+[ext_resource type="AudioStream" uid="uid://46ycnqsc1xqo" path="res://audio/398335__gabytoledosci__spray-bottle.wav" id="5_djoho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mp3v"]
 size = Vector2(10, 14)
@@ -87,6 +88,10 @@ animations = [{
 collision_layer = 3
 script = ExtResource("1_5mp3v")
 
+[node name="Pssshht" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_djoho")
+volume_db = 11.422
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_5mp3v")
@@ -95,6 +100,7 @@ shape = SubResource("RectangleShape2D_5mp3v")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_r5rtg")
 animation = &"pest_start_left"
+autoplay = "pest_stop_right"
 offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]

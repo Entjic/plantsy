@@ -9,6 +9,7 @@ func _ready():
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("use_item") && pesting:
 		pesting = false
+		$Pssshht.stop()
 		if(direction == "right"):
 			$AnimatedSprite2D.play("pest_stop_right")
 		else:
@@ -36,9 +37,11 @@ func use(_node: Node, facing_direction: Vector2) -> void:
 						else:
 							anim_player.play("pest_start_left")
 						pesting = true;
+						$Pssshht.play()
 				break
 
-				
+
 
 func stop_use():
 	$AnimatedSprite2D.stop()
+	$Pssshht.stop()
