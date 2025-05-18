@@ -19,6 +19,8 @@ var plant_name: String
 @onready var ArrowSprite = $InspectionInfo/ArrowSprite;
 @onready var HealthBarPath = $InspectionInfo/HealthBarSprite/Path2D/PathFollow2D;
 
+var note_function: Callable
+
 func _init() -> void:
 	var names = [
 		"Günther",
@@ -114,6 +116,9 @@ func _on_timer_timeout() -> void:
 		ArrowSprite.animation = "red"
 	
 	HealthBarPath.progress_ratio = 1.0 - (self.health.value / 100)
+	
+	if note_function:
+		update_note()
 
 func setTextures():
 	item_type = "plant"
@@ -144,3 +149,13 @@ func update_show_info():
 			InspectionInfo.visible = true
 			return
 	InspectionInfo.visible = false
+
+func set_note_function(fn: Callable):
+	self.note_function = fn
+	
+func unset_note_function():
+	self.note_function = func ():
+		pass
+	
+func update_note():
+	self.note_function.call()

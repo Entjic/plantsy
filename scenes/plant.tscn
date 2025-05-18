@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://k33cyi1veudy"]
+[gd_scene load_steps=34 format=3 uid="uid://k33cyi1veudy"]
 
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c0brkod0kc12t" path="res://assets/arrows1.png" id="5_ptog4"]
 [ext_resource type="AudioStream" uid="uid://s5b7nbsvnjj4" path="res://audio/735168__irolan__item-pickup-chime.wav" id="7_8qc6y"]
 [ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="8_ljraq"]
+[ext_resource type="Texture2D" uid="uid://dvktk41e48v3a" path="res://assets/sprite1_94.png" id="9_2riao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjdt"]
 size = Vector2(16, 16.125)
@@ -176,11 +177,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcta3"]
+atlas = ExtResource("9_2riao")
+region = Rect2(80, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyb1w"]
+atlas = ExtResource("9_2riao")
+region = Rect2(96, 224, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcta3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ddi4x")
+"texture": SubResource("AtlasTexture_wcta3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyb1w")
 }],
 "loop": true,
 "name": &"default",
