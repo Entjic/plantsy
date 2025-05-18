@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://6ukntp2g6al0" path="res://scripts/plant.gd" id="1_odjdt"]
 [ext_resource type="Texture2D" uid="uid://dk07vpvtuucn8" path="res://assets/sprite1_5.png" id="3_a88lo"]
+[ext_resource type="Texture2D" uid="uid://ja6lwfbxy2yw" path="res://assets/sprite1_95.png" id="4_2riao"]
 [ext_resource type="Texture2D" uid="uid://balmf7ryvf3mb" path="res://assets/sprite1_91.png" id="4_8qc6y"]
 [ext_resource type="FontFile" uid="uid://cs58ffg36wco0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_ptog4"]
 [ext_resource type="Texture2D" uid="uid://c1o187ykrohk6" path="res://assets/sprite1_6.png" id="4_toh6u"]
 [ext_resource type="SpriteFrames" uid="uid://bbvr5i3yvd3si" path="res://assets/sprites/arrow.tres" id="7_2riao"]
 [ext_resource type="AudioStream" uid="uid://s5b7nbsvnjj4" path="res://audio/735168__irolan__item-pickup-chime.wav" id="7_8qc6y"]
-[ext_resource type="Texture2D" uid="uid://ho8wfvse86j5" path="res://assets/sprite1_92.png" id="8_ljraq"]
 [ext_resource type="Texture2D" uid="uid://dvktk41e48v3a" path="res://assets/sprite1_94.png" id="9_2riao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odjdt"]
@@ -32,9 +32,9 @@ animations = [{
 atlas = ExtResource("4_toh6u")
 region = Rect2(176, 144, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddi4x"]
-atlas = ExtResource("8_ljraq")
-region = Rect2(80, 96, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_68tkh"]
+atlas = ExtResource("4_2riao")
+region = Rect2(0, 80, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ptog4"]
 atlas = ExtResource("4_8qc6y")
@@ -72,7 +72,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ddi4x")
+"texture": SubResource("AtlasTexture_68tkh")
 }],
 "loop": true,
 "name": &"dead",
