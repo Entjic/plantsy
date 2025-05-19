@@ -29,7 +29,7 @@ func pause_game():
 
 func _on_tutorial_button_pressed() -> void:
 	if(text_state == 0):
-		$TextEdit.text = "Interact: 'E'\nPlant Infos: 'C'"
+		$TextEdit.text = "Interact: 'E'\nPlant Infos: 'C'\nUse Item: 'F'"
 		text_state = 1
 	elif(text_state == 1):
 		$TextEdit.text = "Play as a peaceful\nmonk tending to a\ngarden. Balance the\nplants' needs."

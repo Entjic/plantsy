@@ -1,5 +1,15 @@
 # Plantsy
 
+Nurture your plants, grow a cute little garden and find your inner balance.
+
+## Authors
+
+[Carmen](https://github.com/Carmen-Kissel), 
+[Konrad](https://github.com/konrad2002),
+[Luca](https://github.com/Luca-Guettinger),
+[Paul](https://github.com/Entjic),
+Marc & Lena
+
 Legal Notices
 -------------
 
