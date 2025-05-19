@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="12_jbgew"]
 [ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="13_a85ww"]
 [ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="14_jhsr3"]
-[ext_resource type="Script" uid="uid://cogc7og2kjlqw" path="res://scripts/torchs.gd" id="16_ca42v"]
+[ext_resource type="Script" path="res://scripts/torchs.gd" id="16_ca42v"]
 
 [sub_resource type="Gradient" id="Gradient_ir15t"]
 offsets = PackedFloat32Array(0, 0.571429)
