@@ -1,4 +1,6 @@
-# Plantsy
+# Silent Gardener
+
+<img src="https://github.com/Entjic/silent-gardener/blob/master/assets/logo.png?raw=true" height="200">
 
 Nurture your plants, grow a cute little garden and find your inner balance.
 
