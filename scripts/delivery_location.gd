@@ -8,5 +8,3 @@ func _ready():
 func pay(bank: Bank, plant: Plant):
 	bank.balance += plant.worth.value
 	plant.queue_free()
-		 
-	
