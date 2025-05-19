@@ -24,8 +24,9 @@ func reciveItem() -> Holdable:
 	get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message(itemType + " received")
 
 	if item:
-		var new_item = item.instantiate() as Holdable
+		var new_item: Plant = item.instantiate() as Holdable
 		new_item.type = itemType
+		new_item.worth.value = price * 2
 		new_item.setTextures()
 		return new_item
 	else:

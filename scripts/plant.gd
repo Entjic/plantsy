@@ -8,7 +8,9 @@ var state: PlantState = PlantState.new([self.water_level, self.fertilizer_level,
 var health: PlantHealth = PlantHealth.new(self.state)
 var worth: PlantWorth = PlantWorth.new(self.health)
 var age: PlantAge = PlantAge.new()
-var type:= "sunflower"
+
+var type := "sunflower"
+var price: float
 var plant_name: String
 
 @onready var PlantTexture = $PlantTexture;
