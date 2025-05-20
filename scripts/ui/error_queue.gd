@@ -1,5 +1,7 @@
 extends Control
 
+class_name MessageQueue
+
 @onready var label = $ErrorLabel
 var display_time := 2.5  # seconds to show each message
 var queue := []

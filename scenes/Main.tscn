@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://if0gcs8qoahl"]
+
+[ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/main.gd" id="1_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://bqj27bxk21ymx" path="res://scenes/ErrorQueue.tscn" id="2_c01mt"]
+[ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="3_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://3qdw36y5q45j" path="res://scenes/PlantNote.tscn" id="4_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://cmlgujl4v8fms" path="res://scenes/Game.tscn" id="5_q8u5g"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("game_scene")]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_vcsgt")
+game_scene = NodePath("Game")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MessageQueue" parent="CanvasLayer" instance=ExtResource("2_c01mt")]
+z_index = 10
+offset_left = 941.0
+offset_top = 50.0
+offset_right = -56.0
+offset_bottom = -537.0
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("3_nxtc6")]
+offset_left = 296.0
+offset_top = 43.0
+offset_right = 444.0
+offset_bottom = 191.0
+
+[node name="PlantNote" parent="CanvasLayer" instance=ExtResource("4_jlsqs")]
+visible = false
+
+[node name="Game" parent="." instance=ExtResource("5_q8u5g")]
+process_mode = 1
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[connection signal="new_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_new_game"]
+[connection signal="pause_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_pause_game"]
+[connection signal="start_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_start_game"]

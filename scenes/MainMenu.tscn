@@ -26,9 +26,14 @@ offset_top = 24.0
 offset_right = 192.0
 offset_bottom = 124.0
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
-text = "PLAY"
+text = "Continue"
+
+[node name="NewButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "New Game"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -62,6 +67,7 @@ offset_right = 517.0
 offset_bottom = 120.0
 text = ">"
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]

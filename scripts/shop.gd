@@ -21,7 +21,7 @@ func setTexture():
 			$shopTexture.play(itemType)
 
 func reciveItem() -> Holdable:
-	get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message(itemType + " received")
+	get_tree().get_root().get_node("Main").message_queue.show_message(itemType + " received")
 
 	if item:
 		var new_item: Plant = item.instantiate() as Holdable

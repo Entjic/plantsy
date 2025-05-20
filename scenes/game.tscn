@@ -1,21 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=20 format=3 uid="uid://cmlgujl4v8fms"]
 
-[ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/game.gd" id="1_7ua8r"]
-[ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="2_r7sob"]
-[ext_resource type="PackedScene" uid="uid://3qdw36y5q45j" path="res://scenes/PlantNote.tscn" id="3_y5y3l"]
-[ext_resource type="PackedScene" uid="uid://bqj27bxk21ymx" path="res://scenes/ErrorQueue.tscn" id="4_ir15t"]
-[ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="4_vjgi4"]
-[ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="5_kyk2p"]
-[ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="6_45i86"]
-[ext_resource type="PackedScene" uid="uid://w6pamfp40ick" path="res://scenes/Pesticide.tscn" id="7_sv1m6"]
-[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="8_a8wo8"]
-[ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="9_attvq"]
-[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="10_bneo8"]
-[ext_resource type="PackedScene" uid="uid://dm6nhpwocylrk" path="res://scenes/DeliveryLocation.tscn" id="11_ocgqw"]
-[ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="12_jbgew"]
-[ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="13_a85ww"]
-[ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="14_jhsr3"]
-[ext_resource type="Script" path="res://scripts/torchs.gd" id="16_ca42v"]
+[ext_resource type="Script" uid="uid://cwjt5uu7d2xmd" path="res://scripts/game.gd" id="1_2rd6h"]
+[ext_resource type="PackedScene" uid="uid://c1rxyxpuowjbi" path="res://scenes/player.tscn" id="2_7ua8r"]
+[ext_resource type="PackedScene" uid="uid://bcbrarehldn1j" path="res://scenes/Fertilizer.tscn" id="3_r7sob"]
+[ext_resource type="PackedScene" uid="uid://w6pamfp40ick" path="res://scenes/Pesticide.tscn" id="4_y5y3l"]
+[ext_resource type="PackedScene" uid="uid://d1pkf4sqi5ste" path="res://scenes/WateringCan.tscn" id="5_vjgi4"]
+[ext_resource type="PackedScene" uid="uid://bo1blxjmpi875" path="res://scenes/SlotPlant.tscn" id="6_kyk2p"]
+[ext_resource type="PackedScene" uid="uid://bp8273eqepk48" path="res://scenes/Shop.tscn" id="7_45i86"]
+[ext_resource type="PackedScene" uid="uid://k33cyi1veudy" path="res://scenes/plant.tscn" id="8_sv1m6"]
+[ext_resource type="PackedScene" uid="uid://dm6nhpwocylrk" path="res://scenes/DeliveryLocation.tscn" id="9_a8wo8"]
+[ext_resource type="PackedScene" uid="uid://c531rc3372r2q" path="res://scenes/SlotTool.tscn" id="10_attvq"]
+[ext_resource type="PackedScene" uid="uid://djbdiqclymmlu" path="res://scenes/Map.tscn" id="11_bneo8"]
+[ext_resource type="AudioStream" uid="uid://2nq7ygo4q26q" path="res://audio/586538__migfus20__relaxing-music.mp3" id="12_ocgqw"]
+[ext_resource type="Script" uid="uid://cogc7og2kjlqw" path="res://scripts/torchs.gd" id="13_jbgew"]
 
 [sub_resource type="Gradient" id="Gradient_ir15t"]
 offsets = PackedFloat32Array(0, 0.571429)
@@ -43,27 +40,9 @@ fill_from = Vector2(0.511468, 0.509174)
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_7ua8r")
+script = ExtResource("1_2rd6h")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MessageQueue" parent="CanvasLayer" instance=ExtResource("4_ir15t")]
-z_index = 10
-offset_left = 941.0
-offset_top = 50.0
-offset_right = -56.0
-offset_bottom = -537.0
-
-[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_r7sob")]
-offset_left = 296.0
-offset_top = 43.0
-offset_right = 444.0
-offset_bottom = 191.0
-
-[node name="PlantNote" parent="CanvasLayer" instance=ExtResource("3_y5y3l")]
-visible = false
-
-[node name="Player" parent="." instance=ExtResource("4_vjgi4")]
+[node name="Player" parent="." instance=ExtResource("2_7ua8r")]
 position = Vector2(-1, -2)
 
 [node name="Plants" type="Node2D" parent="."]
@@ -73,110 +52,110 @@ position = Vector2(-385, -355)
 [node name="Tools" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Fertilizer" parent="Tools" instance=ExtResource("6_45i86")]
+[node name="Fertilizer" parent="Tools" instance=ExtResource("3_r7sob")]
 position = Vector2(-138, -38)
 
-[node name="Pesticide" parent="Tools" instance=ExtResource("7_sv1m6")]
+[node name="Pesticide" parent="Tools" instance=ExtResource("4_y5y3l")]
 position = Vector2(-170, -38)
 
-[node name="WateringCan" parent="Tools" instance=ExtResource("8_a8wo8")]
+[node name="WateringCan" parent="Tools" instance=ExtResource("5_vjgi4")]
 position = Vector2(-122, -38)
 
 [node name="PlantSlots" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(2, -7)
 
-[node name="SlotPlant" parent="PlantSlots" instance=ExtResource("9_attvq")]
+[node name="SlotPlant" parent="PlantSlots" instance=ExtResource("6_kyk2p")]
 position = Vector2(-90, 48)
 
-[node name="SlotPlant2" parent="PlantSlots" instance=ExtResource("9_attvq")]
+[node name="SlotPlant2" parent="PlantSlots" instance=ExtResource("6_kyk2p")]
 position = Vector2(-42, 48)
 
-[node name="SlotPlant3" parent="PlantSlots" instance=ExtResource("9_attvq")]
+[node name="SlotPlant3" parent="PlantSlots" instance=ExtResource("6_kyk2p")]
 position = Vector2(6, 48)
 
-[node name="SlotPlant4" parent="PlantSlots" instance=ExtResource("9_attvq")]
+[node name="SlotPlant4" parent="PlantSlots" instance=ExtResource("6_kyk2p")]
 position = Vector2(54, 48)
 
-[node name="SlotPlant5" parent="PlantSlots" instance=ExtResource("9_attvq")]
+[node name="SlotPlant5" parent="PlantSlots" instance=ExtResource("6_kyk2p")]
 position = Vector2(102, 48)
 
-[node name="SlotPlant6" parent="PlantSlots" instance=ExtResource("9_attvq")]
+[node name="SlotPlant6" parent="PlantSlots" instance=ExtResource("6_kyk2p")]
 position = Vector2(150, 48)
 
-[node name="SlotPlant7" parent="PlantSlots" instance=ExtResource("9_attvq")]
+[node name="SlotPlant7" parent="PlantSlots" instance=ExtResource("6_kyk2p")]
 position = Vector2(198, 48)
 
 [node name="Shops" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -213)
 
-[node name="CactusShop" parent="Shops" instance=ExtResource("10_bneo8")]
+[node name="CactusShop" parent="Shops" instance=ExtResource("7_45i86")]
 position = Vector2(-96, 104)
 itemType = "cactus"
-item = ExtResource("5_kyk2p")
+item = ExtResource("8_sv1m6")
 metadata/_edit_group_ = true
 
-[node name="SunflowerShop" parent="Shops" instance=ExtResource("10_bneo8")]
+[node name="SunflowerShop" parent="Shops" instance=ExtResource("7_45i86")]
 position = Vector2(-48, 104)
 itemType = "sunflower"
-item = ExtResource("5_kyk2p")
+item = ExtResource("8_sv1m6")
 metadata/_edit_group_ = true
 
-[node name="OrangeShop" parent="Shops" instance=ExtResource("10_bneo8")]
+[node name="OrangeShop" parent="Shops" instance=ExtResource("7_45i86")]
 position = Vector2(0, 104)
 itemType = "orange"
-item = ExtResource("5_kyk2p")
+item = ExtResource("8_sv1m6")
 metadata/_edit_group_ = true
 
-[node name="PurpleShop" parent="Shops" instance=ExtResource("10_bneo8")]
+[node name="PurpleShop" parent="Shops" instance=ExtResource("7_45i86")]
 position = Vector2(48, 104)
 itemType = "purple"
-item = ExtResource("5_kyk2p")
+item = ExtResource("8_sv1m6")
 metadata/_edit_group_ = true
 
-[node name="RedShop" parent="Shops" instance=ExtResource("10_bneo8")]
+[node name="RedShop" parent="Shops" instance=ExtResource("7_45i86")]
 position = Vector2(96, 104)
 itemType = "red"
-item = ExtResource("5_kyk2p")
+item = ExtResource("8_sv1m6")
 metadata/_edit_group_ = true
 
-[node name="RoseShop" parent="Shops" instance=ExtResource("10_bneo8")]
+[node name="RoseShop" parent="Shops" instance=ExtResource("7_45i86")]
 position = Vector2(144, 104)
 itemType = "rose"
-item = ExtResource("5_kyk2p")
+item = ExtResource("8_sv1m6")
 metadata/_edit_group_ = true
 
-[node name="DeliveryLocation" parent="Shops" instance=ExtResource("11_ocgqw")]
+[node name="DeliveryLocation" parent="Shops" instance=ExtResource("9_a8wo8")]
 position = Vector2(217, 115)
 
 [node name="ToolSlots" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="SlotTool" parent="ToolSlots" instance=ExtResource("12_jbgew")]
+[node name="SlotTool" parent="ToolSlots" instance=ExtResource("10_attvq")]
 position = Vector2(-170, -39)
 animation_state = "left1"
 
-[node name="SlotTool2" parent="ToolSlots" instance=ExtResource("12_jbgew")]
+[node name="SlotTool2" parent="ToolSlots" instance=ExtResource("10_attvq")]
 position = Vector2(-154, -39)
 animation_state = "left2"
 
-[node name="SlotTool3" parent="ToolSlots" instance=ExtResource("12_jbgew")]
+[node name="SlotTool3" parent="ToolSlots" instance=ExtResource("10_attvq")]
 position = Vector2(-138, -39)
 animation_state = "middle"
 
-[node name="SlotTool4" parent="ToolSlots" instance=ExtResource("12_jbgew")]
+[node name="SlotTool4" parent="ToolSlots" instance=ExtResource("10_attvq")]
 position = Vector2(-122, -39)
 animation_state = "middle"
 
-[node name="SlotTool5" parent="ToolSlots" instance=ExtResource("12_jbgew")]
+[node name="SlotTool5" parent="ToolSlots" instance=ExtResource("10_attvq")]
 position = Vector2(-106, -39)
 animation_state = "right"
 
-[node name="Map" parent="." instance=ExtResource("13_a85ww")]
+[node name="Map" parent="." instance=ExtResource("11_bneo8")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_jhsr3")
+stream = ExtResource("12_ocgqw")
 autoplay = true
 
 [node name="Light" type="Node2D" parent="."]
@@ -220,7 +199,7 @@ energy = 1.61
 texture = SubResource("GradientTexture1D_rysoc")
 
 [node name="Torchs" type="Node2D" parent="Light"]
-script = ExtResource("16_ca42v")
+script = ExtResource("13_jbgew")
 
 [node name="PointLight2D" type="PointLight2D" parent="Light/Torchs"]
 position = Vector2(-199, -23)
