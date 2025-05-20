@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 60.0
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -135,6 +137,6 @@ func buy(shop: Node):
 
 	if bank.pay(shop.price):
 		var item = shop.reciveItem()
-		get_tree().current_scene.add_child(item)
+		get_parent().get_node("Plants").add_child(item)
 		item.pick_up(self)
 		held = item

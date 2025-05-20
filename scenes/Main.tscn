@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://if0gcs8qoahl"]
+[gd_scene load_steps=7 format=3 uid="uid://if0gcs8qoahl"]
 
 [ext_resource type="Script" uid="uid://bcywc7owuf4x0" path="res://scripts/main.gd" id="1_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://bqj27bxk21ymx" path="res://scenes/ErrorQueue.tscn" id="2_c01mt"]
 [ext_resource type="PackedScene" uid="uid://cue3olnfe2bv1" path="res://scenes/MainMenu.tscn" id="3_nxtc6"]
 [ext_resource type="PackedScene" uid="uid://3qdw36y5q45j" path="res://scenes/PlantNote.tscn" id="4_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://74cr4wi87oxg" path="res://scenes/GameOverScreen.tscn" id="5_c01mt"]
 [ext_resource type="PackedScene" uid="uid://cmlgujl4v8fms" path="res://scenes/Game.tscn" id="5_q8u5g"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("game_scene")]
@@ -30,11 +31,57 @@ offset_bottom = 191.0
 [node name="PlantNote" parent="CanvasLayer" instance=ExtResource("4_jlsqs")]
 visible = false
 
+[node name="GameOverScreen" parent="CanvasLayer" instance=ExtResource("5_c01mt")]
+
+[node name="Progress" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -546.0
+offset_top = -40.0
+offset_right = 534.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Progress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/Progress"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -8.0
+offset_right = 153.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0m 0s"
+horizontal_alignment = 1
+
 [node name="Game" parent="." instance=ExtResource("5_q8u5g")]
 process_mode = 1
 
 [node name="GameTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 6.0
 
 [connection signal="new_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_new_game"]
 [connection signal="pause_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_pause_game"]
 [connection signal="start_game" from="CanvasLayer/MainMenu" to="." method="_on_main_menu_start_game"]
+[connection signal="back_to_menu" from="CanvasLayer/GameOverScreen" to="." method="_on_game_over_screen_back_to_menu"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

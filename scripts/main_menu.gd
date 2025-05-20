@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 	elif(Input.is_action_just_pressed("ui_cancel") && get_tree().paused == false):
 		pause();
 
-
 func _on_continue_button_pressed() -> void:
 	start();
 
@@ -29,8 +28,7 @@ func _on_play_button_pressed() -> void:
 	create_new();
 
 func create_new():
-	$VBoxContainer/ContinueButton.visible = true
-	has_game = true;
+	set_has_game(true)
 	self.hide()
 	new_game.emit()
 
@@ -42,6 +40,10 @@ func pause():
 	self.show();
 	pause_game.emit()
 
+func set_has_game(state: bool):
+	$VBoxContainer/ContinueButton.visible = state
+	has_game = state;
+	
 
 func _on_tutorial_button_pressed() -> void:
 	if(text_state == 0):
