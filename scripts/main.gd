@@ -12,7 +12,7 @@ class_name Main
 @onready var game: Game = $Game;
 @onready var timer = $GameTimer;
 
-@export var PLAY_TIME = 6;
+@export var PLAY_TIME = 600;
 
 func _ready():
 	get_tree().root.connect("size_changed", self._on_size_changed)
