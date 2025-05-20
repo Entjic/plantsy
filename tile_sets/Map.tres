@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://vkqjc6wfrw1a"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ddg4qvi2ho8dn"]
 
 [ext_resource type="Texture2D" uid="uid://bte4v6gxg8kgn" path="res://assets/sprite1_96.png" id="1_f2l43"]
 [ext_resource type="Texture2D" uid="uid://bvun3mck51t5d" path="res://assets/sprite2_1.png" id="2_3ah7u"]
@@ -169,7 +169,8 @@ texture = ExtResource("1_f2l43")
 0:9/animation_frame_0/duration = 1.0
 0:9/animation_frame_1/duration = 1.0
 0:9/0 = 0
-0:9/0/y_sort_origin = 10
+0:9/0/texture_origin = Vector2i(0, 8)
+0:9/0/y_sort_origin = 2
 5:9/size_in_atlas = Vector2i(1, 2)
 5:9/0 = 0
 5:9/0/y_sort_origin = 16

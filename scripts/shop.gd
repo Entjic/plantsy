@@ -5,6 +5,7 @@ extends StaticBody2D
 @export var price: float;
 
 @onready var shopTexture = $shopTexture;
+#var types = ['cactus', 'orange', 'purple', 'red', 'rose', 'sunflower']
 
 func _ready():
 	price = randi_range(1, 6)
@@ -15,25 +16,17 @@ func _process(delta: float) -> void:
 	update_show_info()
 
 func setTexture():
-	if(itemType == "cactus"):
-		$shopTexture.play("cactus")
-	if(itemType == "orange"):
-		$shopTexture.play("orange")
-	if(itemType == "purple"):
-		$shopTexture.play("purple")
-	if(itemType == "red"):
-		$shopTexture.play("red")
-	if(itemType == "rose"):
-		$shopTexture.play("rose")
-	if(itemType == "sunflower"):
-		$shopTexture.play("sunflower")
+	match itemType:
+		'cactus', 'orange', 'purple', 'red', 'rose', 'sunflower':
+			$shopTexture.play(itemType)
 
 func reciveItem() -> Holdable:
-	get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message(itemType + " received")
+	get_tree().get_root().get_node("Main").message_queue.show_message(itemType + " received")
 
 	if item:
-		var new_item = item.instantiate() as Holdable
+		var new_item: Plant = item.instantiate() as Holdable
 		new_item.type = itemType
+		new_item.worth.value = price * 2
 		new_item.setTextures()
 		return new_item
 	else:

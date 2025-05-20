@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 60.0
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -72,7 +74,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("analyze"):
 		
-		var note_ui = get_tree().get_root().get_node("Game/CanvasLayer/PlantNote")
+		var note_ui = get_tree().get_root().get_node("Main/CanvasLayer/PlantNote")
 		if note_ui.visible:
 			note_ui.hide_note()
 		else: 
@@ -108,7 +110,7 @@ func drop(body: Node):
 		if slot is DeliveryLocation and self.held is Plant: 
 			var plnt: Plant = self.held
 			if plnt.age.value != plnt.age.max:
-				get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Plant is not yet fully grown. Try selling it later!")
+				get_tree().get_root().get_node("Main").message_queue.show_message("Plant is not yet fully grown. Try selling it later!")
 				return
 			
 		print("Can place " + held.name + " on slot")
@@ -126,15 +128,15 @@ func drop(body: Node):
 		self.held = null
 		return
 	else:
-		get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Wrong slot for this item.")
+		get_tree().get_root().get_node("Main").message_queue.show_message("Wrong slot for this item.")
 	
 func buy(shop: Node):
 	if held:
-		get_tree().get_root().get_node("Game/CanvasLayer/MessageQueue").show_message("Empty your hands")
+		get_tree().get_root().get_node("Main").message_queue.show_message("Empty your hands")
 		return
 
 	if bank.pay(shop.price):
 		var item = shop.reciveItem()
-		get_tree().current_scene.add_child(item)
+		get_parent().get_node("Plants").add_child(item)
 		item.pick_up(self)
 		held = item
