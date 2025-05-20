@@ -6,7 +6,7 @@ var balance = 0
 var tree
 
 func _init(_tree: SceneTree) -> void:
-	balance = 10
+	balance = 25
 	tree = _tree
 
 func give(amount: float):
